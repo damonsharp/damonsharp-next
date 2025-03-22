@@ -6,6 +6,7 @@ import { escHtml } from "@/app/utils";
 import { use } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 
 
 export default function Project({ params }) {
@@ -62,6 +63,9 @@ export default function Project({ params }) {
 				)}
 				{contribution && (
 					<p className="mt-4">{escHtml(contribution)}</p>
+				)}
+				{liveUrl && (
+					<Link className="inline-block mt-4 px-4 py-2 border-2 border-primary hover:border-accent hover:text-accent rounded" href={liveUrl}>Visit Live Site</Link>
 				)}
 			</section>
 		</article>
