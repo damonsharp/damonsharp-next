@@ -7,7 +7,7 @@ export default function Resume() {
 			<section className="md:col-span-3">
 				<h1>Resume Page</h1>
 			</section>
-			<Sidebar classes="md:col-span-1 bg-white p-6 rounded shadow">
+			<Sidebar classes="md:col-span-1 bg-white p-6 rounded-sm shadow-sm">
 				<h3>This is an aside component.</h3>
 			</Sidebar>
 		</div>

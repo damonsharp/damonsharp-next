@@ -4,7 +4,7 @@ import SocialIcon from "@/components/SocialIcon";
 
 const Footer = () => {
 	return (
-		<footer className="bg-white p-12">
+		<footer className="bg-white text-primary p-12">
 			<div className="md:container md:mx-auto">
 				<div className="grid grid-flow-col items-center">
 					<div className="col-span-4">

@@ -2,7 +2,7 @@ import {
 	Geist,
 	Geist_Mono
 } from 'next/font/google';
-import './globals.css';
+import '@/assets/styles/global.css';
 import ApolloWrapper from '@/components/ApolloWrapper';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout ({ children }) {
 	return (
 		<html lang="en">
-		<body className={`${geistSans.variable} ${geistMono.variable}`}>
+		<body className={`text-white ${geistSans.variable} ${geistMono.variable}`}>
 		<ApolloWrapper>
 			<Header/>
 			<main className="p-12">

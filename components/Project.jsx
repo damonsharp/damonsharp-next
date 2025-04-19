@@ -5,7 +5,7 @@ import Link from "next/link";
 const Project = ({ project }) => {
 	const { excerpt, title, slug, projectMetadata } = project;
 	return (
-		<article className="bg-gray-50 grid gap-6 justify-around shadow-lg rounded-lg overflow-clip mb-6 sm:mb-0">
+		<article className="bg-gray-50 text-primary grid gap-6 justify-around shadow-lg rounded-lg overflow-clip mb-6 sm:mb-0">
 			<figure className="max-h-56 overflow-clip">
 				<Image
 					src={projectMetadata?.images[ 0 ]?.image?.node?.sourceUrl}
@@ -28,7 +28,7 @@ const Project = ({ project }) => {
 					)}
 				</div>
 				<div className="pb-6">
-					<Link className="bg-secondary hover:bg-accent text-white px-4 py-2 rounded"
+					<Link className="bg-secondary hover:bg-accent hover:text-primary text-white px-4 py-2 rounded-sm"
 						href={`/projects/${slug}`}>
 						View Project Details
 					</Link>

@@ -65,7 +65,7 @@ export default function Project({ params }) {
 					<p className="mt-4">{escHtml(contribution)}</p>
 				)}
 				{liveUrl && (
-					<Link className="inline-block mt-4 px-4 py-2 border-2 border-primary hover:border-accent hover:text-accent rounded" href={liveUrl}>Visit Live Site</Link>
+					<Link className="inline-block mt-4 px-4 py-2 border-2 border-primary hover:border-accent hover:text-accent rounded-sm" href={liveUrl}>Visit Live Site</Link>
 				)}
 			</section>
 		</article>
