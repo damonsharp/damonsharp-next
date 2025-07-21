@@ -13,7 +13,8 @@ const Footer = ({ className }) => {
 	const year = ( new Date() ).getFullYear();
 
 	return (
-		<footer className={cn("text-neutral bg-secondary p-4 -mt-6 items-end border-t border-accent", className)}>
+		<footer
+			className={cn("text-neutral bg-secondary p-4 -mt-6 items-end border-t border-accent", className)}>
 			<div className="md:container md:mx-auto">
 				<div className="grid grid-cols-5 items-center justify-between">
 					<div className="flex items-center col-span-4 avatar">

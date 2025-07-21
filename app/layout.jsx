@@ -25,11 +25,11 @@ export const metadata = {
 export default function RootLayout ({ children }) {
 	return (
 		<html lang="en">
-		<body className={`${geistSans.variable} ${geistMono.variable}`}>
+		<body className={`bg-neutral text-primary ${geistSans.variable} ${geistMono.variable}`}>
 		<ApolloWrapper>
 			<main className="flex flex-col align-center">
 				<Header/>
-				<div className="min-h-screen">
+				<div>
 					{children}
 				</div>
 				<Footer/>
