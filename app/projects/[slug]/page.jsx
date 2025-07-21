@@ -1,12 +1,13 @@
 "use client";
 
 import { useQuery } from "@apollo/client";
-import PROJECT_QUERY from "@/app/queries/getProject";
-import { escHtml } from "@/app/utils";
+import PROJECT_QUERY from "@/lib/queries/getProject";
+import { escHtml } from "@/lib/utils";
 import { use } from 'react';
 import Image from 'next/image';
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Spinner from "@/components/Spinner";
 
 
 export default function Project({ params }) {
@@ -22,7 +23,7 @@ export default function Project({ params }) {
 	);
 
 	if (loading) {
-		return <p>Loading...</p>;
+		return <Spinner/>;
 	}
 
 	if (error) {
@@ -36,10 +37,10 @@ export default function Project({ params }) {
 	}
 
 	const { id, title, content, projectMetadata } = project;
-	const { images, contribution, liveUrl } = projectMetadata;
+	const { images, contribution, techStack, liveUrl } = projectMetadata;
 
 	return (
-		<article className={`sm:grid grid-cols-3 gap-8 project-${id}`}>
+		<article className={`sm:grid grid-cols-3 project-${id}`}>
 			<section className="col-span-1">
 				<Image
 					src={images[ 0 ]?.image?.node?.sourceUrl}
@@ -55,17 +56,27 @@ export default function Project({ params }) {
 				/>
 			</section>
 			<section className="col-span-2">
-				<h1 className="text-4xl mb-4">{title}</h1>
+				<h1>{title}</h1>
 				{content && (
 					<div>
+						<h2>Description:</h2>
 						{escHtml(content)}
 					</div>
 				)}
 				{contribution && (
-					<p className="mt-4">{escHtml(contribution)}</p>
+					<div>
+						<h2>Contribution:</h2>
+						<p>{escHtml(contribution)}</p>
+					</div>
+				)}
+				{techStack && (
+					<div>
+						<h2>Tech stack:</h2>
+						<p>{techStack}</p>
+					</div>
 				)}
 				{liveUrl && (
-					<Link className="inline-block mt-4 px-4 py-2 border-2 border-primary hover:border-accent hover:text-accent rounded-sm" href={liveUrl}>Visit Live Site</Link>
+					<Link className="bg-primary px-5 py-3 text-neutral rounded mt-5" href={liveUrl}>Visit Live Site</Link>
 				)}
 			</section>
 		</article>

@@ -1,11 +1,11 @@
 import React from "react";
 
-const Sidebar = ( {
-	classes,
+const Sidebar = ({
+	className,
 	children
-} ) => {
+}) => {
 	return (
-		<aside className={classes}>
+		<aside className={className}>
 			{children}
 		</aside>
 	);

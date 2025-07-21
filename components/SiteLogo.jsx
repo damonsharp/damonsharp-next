@@ -1,22 +1,22 @@
-import Image from 'next/image'
-import logo from '@/public/dws-logo.svg'
+import Image from 'next/image';
+import logo from '@/public/dws-logo.svg';
 
 const SiteLogo = ({
-	width = 46,
+	width = 50,
 	height = 50,
-	classes,
+	className,
 	prioritize = false
 }) => {
 	return (
 		<Image
-			className={`logo-svg ${classes}`}
+			className={className}
 			src={logo}
 			alt="Damon Sharp Logo"
 			width={width}
 			height={height}
 			priority={prioritize}
 		/>
-	)
-}
+	);
+};
 
-export default SiteLogo
+export default SiteLogo;

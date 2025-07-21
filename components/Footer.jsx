@@ -1,69 +1,38 @@
 import SiteLogo from "@/components/SiteLogo";
-import { faXTwitter, faGithub, faLinkedin, faMastodon } from "@fortawesome/free-brands-svg-icons";
+import {
+	faGithub,
+	faLinkedin,
+	faMastodon,
+	faXTwitter
+} from "@fortawesome/free-brands-svg-icons";
+import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SocialIcon from "@/components/SocialIcon";
+import { cn } from "@/lib/utils";
 
-const Footer = () => {
+const Footer = ({ className }) => {
+	const year = ( new Date() ).getFullYear();
+
 	return (
-		<footer className="bg-white text-primary p-12">
+		<footer className={cn("text-neutral bg-secondary p-4 -mt-6 items-end border-t border-accent", className)}>
 			<div className="md:container md:mx-auto">
-				<div className="grid grid-flow-col items-center">
-					<div className="col-span-4">
-						<div className="avatar content-center">
-							<div className="w-24 rounded-lg bg-primary border-2 border-accent p-3">
-								<SiteLogo classes="w-full h-auto"/>
-							</div>
+				<div className="grid grid-cols-5 items-center justify-between">
+					<div className="flex items-center col-span-4 avatar">
+						<div className="w-fit rounded-lg bg-primary border-1 border-accent p-1">
+							<SiteLogo className="size-10"/>
 						</div>
-						<div className="grid grid-flow-col-dense auto-cols-max mt-6 gap-4">
-							<SocialIcon link="https://x.com/damonsharp" icon={faXTwitter} classes="w-6 h-6 text-primary hover:text-accent"/>
-							<SocialIcon link="https://github.com/damonsharp" icon={faGithub} classes="w-6 h-6 text-primary hover:text-accent"/>
-							<SocialIcon link="https://www.linkedin.com/in/damonsharp" icon={faLinkedin} classes="w-6 h-6 text-primary hover:text-accent"/>
-							<SocialIcon link="https://phpc.social/@damonsharp" icon={faMastodon} classes="w-6 h-6 text-primary hover:text-accent"/>
-						</div>
+						<p className="text-accent w-full text-xs m-0">Damon Sharp - {year}</p>
 					</div>
-					<div className="col-span-2">
-						<h3 className="text-lg font-bold">Heading</h3>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div className="col-span-2">
-						<h3 className="text-lg font-bold">Heading</h3>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div className="col-span-2">
-						<h3 className="text-lg font-bold">Heading</h3>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
-						<ul>
-							<li><a href="">Link</a></li>
-						</ul>
+					<div className="flex gap-4 col-span-1 items-center justify-end">
+						<SocialIcon link="https://x.com/damonsharp" icon={faXTwitter}
+									classes="size-6 text-accent hover:text-neutral"/>
+						<SocialIcon link="https://github.com/damonsharp" icon={faGithub}
+									classes="size-6 text-accent hover:text-neutral"/>
+						<SocialIcon link="https://www.linkedin.com/in/damonsharp" icon={faLinkedin}
+									classes="size-6 text-accent hover:text-neutral"/>
+						<SocialIcon link="https://phpc.social/@damonsharp" icon={faMastodon}
+									classes="size-6 text-accent hover:text-neutral"/>
+						<SocialIcon link="/contact" icon={faSquareEnvelope}
+									classes="size-6 text-accent hover:text-neutral"/>
 					</div>
 				</div>
 			</div>

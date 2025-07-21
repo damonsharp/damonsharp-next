@@ -1,17 +1,20 @@
 import React from "react";
-import { escHtml } from "@/app/utils";
+import {
+	cn,
+	escHtml
+} from "@/lib/utils";
 
-const EditorContent = ({ title, html }) => {
+const EditorContent = ({ title, html, className }) => {
 	return (
-		<>
+		<section className={cn('', className)}>
 			{title && (
-				<h1 className="text-4xl mb-6">{title}</h1>
+				<h1>{title}</h1>
 			)}
 
 			{html && (
-				escHtml(html)
+				<div className="content">{escHtml(html)}</div>
 			)}
-		</>
+		</section>
 	);
 };
 

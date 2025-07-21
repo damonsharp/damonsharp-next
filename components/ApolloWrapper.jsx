@@ -11,7 +11,7 @@ const client = new ApolloClient( {
 	cache: new InMemoryCache(),
 } );
 
-const ApolloWrapper = ( { children } ) => {
+const ApolloWrapper = ({ children }) => {
 	return (
 		<ApolloProvider client={client}>
 			{children}
