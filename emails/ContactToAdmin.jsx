@@ -27,7 +27,7 @@ const ContactToAdmin = ({
 						</Row>
 						<Row>
 							<Text className="text-primary">
-								Thanks for reaching out through my website. I do my best to respond promptly, but give me up to two business days just is case.
+								Thanks for reaching out through my website. I do my best to respond promptly -- usually within a few hours, but give me 1-2 days just is case.
 							</Text>
 						</Row>
 					</Section>

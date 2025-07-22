@@ -4,15 +4,19 @@ import {
 	escHtml
 } from "@/lib/utils";
 
-const EditorContent = ({ title, html, className }) => {
+const EditorContent = ({
+	title,
+	html,
+	className
+}) => {
 	return (
-		<section className={cn('', className)}>
+		<section className={cn("", className)}>
 			{title && (
 				<h1>{title}</h1>
 			)}
 
 			{html && (
-				<div className="content">{escHtml(html)}</div>
+				<div className="content flex flex-col">{escHtml(html)}</div>
 			)}
 		</section>
 	);

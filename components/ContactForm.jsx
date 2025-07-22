@@ -75,7 +75,7 @@ const ContactForm = ({ className }) => {
 						/>
 					</div>
 					<Button
-						className="bg-primary text-neutral hover:bg-accent px-5 py-3 rounded mt-5 cursor-pointer"
+						className="bg-primary text-neutral hover:bg-accent px-5 py-4 rounded mt-5 cursor-pointer"
 						disabled={isPending}
 					>
 						{isPending ? "Sending" : "Send Message"}

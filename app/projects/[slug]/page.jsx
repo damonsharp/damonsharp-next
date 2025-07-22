@@ -3,17 +3,31 @@
 import { useQuery } from "@apollo/client";
 import PROJECT_QUERY from "@/lib/queries/getProject";
 import { escHtml } from "@/lib/utils";
-import { use } from 'react';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import {
+	use,
+	useEffect,
+	useState
+} from "react";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import Spinner from "@/components/Spinner";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "@/components/ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-export default function Project({ params }) {
+export default function Project ({ params }) {
+	const [galleryImageData, setGalleryImageData] = useState({
+		src: null,
+		alt: "",
+		thumbnailIndex: 0
+	});
 	params = use(params);
-	const {slug} = params;
-	const { loading, error, data } = useQuery(
+	const { slug } = params;
+	const {
+		loading,
+		error,
+		data
+	} = useQuery(
 		PROJECT_QUERY,
 		{
 			variables: {
@@ -21,6 +35,17 @@ export default function Project({ params }) {
 			}
 		}
 	);
+
+	useEffect(() => {
+		if (data) {
+			console.log(data);
+			setGalleryImageData({
+				...galleryImageData,
+				src: data.project.projectMetadata.images[ 0 ].image.node.sourceUrl,
+				alt: data.project.projectMetadata.images[ 0 ].image.node.altText
+			});
+		}
+	}, [data]);
 
 	if (loading) {
 		return <Spinner/>;
@@ -32,53 +57,97 @@ export default function Project({ params }) {
 
 	const { project } = data;
 
-	if ( ! project ) {
+	if (! project) {
 		notFound();
 	}
 
-	const { id, title, content, projectMetadata } = project;
-	const { images, contribution, techStack, liveUrl } = projectMetadata;
+	const {
+		id,
+		title,
+		content,
+		projectMetadata
+	} = project;
+	const {
+		images,
+		contribution,
+		techStack,
+		liveUrl
+	} = projectMetadata;
 
 	return (
-		<article className={`sm:grid grid-cols-3 project-${id}`}>
-			<section className="col-span-1">
-				<Image
-					src={images[ 0 ]?.image?.node?.sourceUrl}
-					alt={images[ 0 ]?.image?.node?.altText}
-					className="w-full h-auto w-max"
-					width={600}
-					height={338}
-					style={{
-						width: "100%",
-						height: "auto",
-					}}
-					priority={true}
-				/>
-			</section>
-			<section className="col-span-2">
-				<h1>{title}</h1>
-				{content && (
-					<div>
-						<h2>Description:</h2>
-						{escHtml(content)}
-					</div>
-				)}
-				{contribution && (
-					<div>
-						<h2>Contribution:</h2>
-						<p>{escHtml(contribution)}</p>
-					</div>
-				)}
-				{techStack && (
-					<div>
-						<h2>Tech stack:</h2>
-						<p>{techStack}</p>
-					</div>
-				)}
-				{liveUrl && (
-					<Link className="bg-primary px-5 py-3 text-neutral rounded mt-5" href={liveUrl}>Visit Live Site</Link>
-				)}
-			</section>
+		<article className={`project-${id} py-12`}>
+			<div className="flex flex-col inner">
+				<section className="">
+					<h1 className="mb-4">{title}</h1>
+					<Image
+						src={galleryImageData.src}
+						alt={galleryImageData.alt}
+						className="w-full h-auto w-max rounded overflow-clip shadow-sm"
+						width={600}
+						height={338}
+						style={{
+							width: "100%",
+							height: "auto",
+						}}
+						priority={true}
+					/>
+					<ul className="mt-6 flex gap-2 lg:gap-6 justify-center items-center">
+						{images.length > 1 && images.map((image, i) => {
+							const srcUrl = image.image?.node?.sourceUrl;
+
+							return (
+								<li key={image.image.node.id}
+								    className={`w-16 md:w-24 lg:w-40 border-2 ${galleryImageData.thumbnailIndex === i ? "border-secondary" : "border-neutral"} rounded cursor-pointer overflow-clip transition hover:border-secondary`}>
+									<img
+										className="size-max"
+										src={srcUrl}
+										alt={image.image?.node?.altText}
+										priority={true}
+										onClick={(event) => {
+											setGalleryImageData({
+												...galleryImageData,
+												src: event.target.getAttribute("src"),
+												alt: event.target.alt,
+												thumbnailIndex: i
+											});
+										}}
+									/>
+								</li>
+							);
+						})}
+					</ul>
+				</section>
+				<section className="flex flex-col">
+					{content && (
+						<div>
+							<h2 className="text-lg">Description:</h2>
+							{escHtml(content)}
+						</div>
+					)}
+					{contribution && (
+						<div>
+							<h2 className="text-lg">Contribution:</h2>
+							<p>{escHtml(contribution)}</p>
+						</div>
+					)}
+					{techStack && (
+						<div>
+							<h2 className="text-lg">Tech stack:</h2>
+							<p>{techStack}</p>
+						</div>
+					)}
+					{liveUrl && (
+						<Button asChild
+						        className="max-w-max bg-primary text-neutral hover:bg-accent px-5 py-4 rounded mt-5 cursor-pointer">
+							<a href={liveUrl} target="_blank" rel="noopener">
+								Visit Live Site <FontAwesomeIcon icon={faExternalLink} className="text-neutral"/>
+							</a>
+
+						</Button>
+					)}
+				</section>
+			</div>
 		</article>
-	);
+	)
+		;
 }

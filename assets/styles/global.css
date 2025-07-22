@@ -14,7 +14,7 @@
 	--color-primary-foreground: var(--color-neutral);
 	--color-secondary: oklch(0.497 0.003 286.285);
 	--color-secondary-foreground: var(--color-neutral);
-	--color-accent: oklch(0.748 0.06 84.909);
+	--color-accent: oklch(0.8186 0.0411 89.71);
 	--color-accent-foreground: var(--color-neutral);
 	--color-info: oklch(0.854 0.052 199.289);
 	--color-success: oklch(0.774 0.124 131.912);
@@ -107,17 +107,13 @@
 		@apply text-lg;
 	}
 
-	.content p {
-		@apply mb-2;
-	}
-
 	input,
 	textarea {
 		@apply focus-within:outline-secondary;
 	}
 
 	.inner {
-		@apply max-w-3/5 m-auto;
+		@apply max-w-11/12 xl:max-w-3/5 m-auto;
 	}
 
 	.inner-wide {

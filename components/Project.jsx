@@ -12,14 +12,14 @@ const Project = ({
 }) => {
 
 	const {
-			  excerpt,
-			  title,
-			  slug,
-			  projectMetadata
-		  } = project;
+		excerpt,
+		title,
+		slug,
+		projectMetadata
+	} = project;
 	return (
 		<article
-			className={cn("flex flex-col bg-neutral text-primary shadow-md rounded-lg overflow-clip mb-6 sm:mb-0", className)}>
+			className={cn("flex flex-col bg-neutral text-primary shadow-md rounded-lg overflow-clip mb-6 sm:mb-0 max-w-[600px]", className)}>
 			<figure className="border-b-2 border-b-gray-100">
 				<Image
 					src={projectMetadata?.images[ 0 ]?.image?.node?.sourceUrl}
@@ -34,10 +34,10 @@ const Project = ({
 				<div className="p-6 flex flex-col justify-between h-full">
 					<h2>{title}</h2>
 					{excerpt && (
-						<div key={slug}>{escHtml(excerpt)}</div>
+						<div className="flex flex-col">{escHtml(excerpt)}</div>
 					)}
 					<Button asChild
-							className="bg-primary text-neutral hover:bg-secondary px-4 py-2 rounded-sm w-fit justify-self-end">
+					        className="bg-primary text-neutral hover:bg-secondary px-5 py-4 rounded-sm w-fit justify-self-end">
 						<Link href={`/projects/${slug}`}>
 							View Project Details
 						</Link>

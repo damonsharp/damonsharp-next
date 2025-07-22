@@ -11,11 +11,11 @@ const Project = ({
 	className = ""
 }) => {
 	const {
-			  excerpt,
-			  title,
-			  slug,
-			  projectMetadata
-		  } = project;
+		excerpt,
+		title,
+		slug,
+		projectMetadata
+	} = project;
 	return (
 		<article className={cn("grid grid-cols-1 md:grid-cols-2", className)}>
 			<figure className="">
@@ -32,17 +32,17 @@ const Project = ({
 				<div className="flex flex-col justify-staart h-full">
 					<h3>{title}</h3>
 					{excerpt && (
-						<div key={slug}>{escHtml(excerpt)}</div>
+						<div className="flex flex-col">{escHtml(excerpt)}</div>
 					)}
 					<div className="flex items-center">
 						<Button asChild
-								className="bg-primary text-neutral hover:bg-secondary hover:text-neutral px-4 py-2 rounded-sm w-fit justify-self-end">
+						        className="bg-primary text-neutral hover:bg-secondary hover:text-neutral px-5 py-4 rounded-sm w-fit justify-self-end">
 							<Link href={`/projects/${slug}`}>
 								View Project Details
 							</Link>
 						</Button>
 						<Button asChild
-								className="bg-neutral text-primary hover:bg-secondary hover:text-neutral px-4 py-2 rounded-sm w-fit justify-self-end">
+						        className="bg-neutral text-primary hover:bg-secondary hover:text-neutral px-5 py-4 rounded-sm w-fit justify-self-end">
 							<Link href={`/projects`}>
 								View All Projects
 							</Link>

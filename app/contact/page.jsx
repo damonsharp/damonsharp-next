@@ -4,13 +4,15 @@ import ContactForm from "@/components/ContactForm";
 import EditorContent from "@/components/EditorContent";
 import { useQuery } from "@apollo/client";
 import PAGE_QUERY from "@/lib/queries/getPage";
+import Spinner from "@/components/Spinner";
+import React from "react";
 
 const ContactPage = () => {
 	const {
-			  loading,
-			  error,
-			  data
-		  } = useQuery(
+		loading,
+		error,
+		data
+	} = useQuery(
 		PAGE_QUERY,
 		{
 			variables: { "id": "contact" }
@@ -18,7 +20,7 @@ const ContactPage = () => {
 	);
 
 	if (loading) {
-		return <p>Loading...</p>;
+		return <Spinner/>;
 	}
 
 	if (error) {
@@ -26,13 +28,15 @@ const ContactPage = () => {
 	}
 
 	const {
-			  title,
-			  content
-		  } = data?.page;
+		title,
+		content
+	} = data?.page;
 	return (
-		<section className="flex flex-col inner py-10">
-			<EditorContent title="Get In Touch" html={content}/>
-			<ContactForm/>
+		<section className="bg-neutral -mt-6 flex flex-col py-10">
+			<div className="inner">
+				<EditorContent title="Get In Touch" html={content}/>
+				<ContactForm/>
+			</div>
 		</section>
 	);
 };
