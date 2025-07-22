@@ -112,14 +112,6 @@
 		@apply focus-within:outline-secondary;
 	}
 
-	.inner {
-		@apply max-w-11/12 xl:max-w-3/5 m-auto;
-	}
-
-	.inner-wide {
-		@apply max-w-11/12 m-auto;
-	}
-
 	.angle-neutral-accent {
 		background-image: var(--angle-neutral-accent);
 	}

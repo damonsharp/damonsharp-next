@@ -1,11 +1,12 @@
 "use client";
 
 import ContactForm from "@/components/ContactForm";
-import EditorContent from "@/components/EditorContent";
 import { useQuery } from "@apollo/client";
 import PAGE_QUERY from "@/lib/queries/getPage";
 import Spinner from "@/components/Spinner";
 import React from "react";
+import ContainerNarrow from "@/components/ContainerNarrow";
+import { escHtml } from "@/lib/utils";
 
 const ContactPage = () => {
 	const {
@@ -32,11 +33,12 @@ const ContactPage = () => {
 		content
 	} = data?.page;
 	return (
-		<section className="bg-neutral -mt-6 flex flex-col py-10">
-			<div className="inner">
-				<EditorContent title="Get In Touch" html={content}/>
+		<section className="bg-neutral -mt-6 py-10">
+			<ContainerNarrow className="gap-18">
+				<h1 className="">Let's Start a Conversation</h1>
+				<div className="flex flex-col">{escHtml(content)}</div>
 				<ContactForm/>
-			</div>
+			</ContainerNarrow>
 		</section>
 	);
 };

@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout ({ children }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="min-h-screen bg-accent">
 		<body className={`bg-neutral text-primary ${geistSans.variable} ${geistMono.variable}`}>
 		<ApolloWrapper>
 			<main className="flex flex-col align-center">

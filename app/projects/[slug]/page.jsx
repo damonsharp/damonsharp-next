@@ -14,6 +14,7 @@ import Spinner from "@/components/Spinner";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContainerNarrow from "@/components/ContainerNarrow";
 
 export default function Project ({ params }) {
 	const [galleryImageData, setGalleryImageData] = useState({
@@ -38,7 +39,6 @@ export default function Project ({ params }) {
 
 	useEffect(() => {
 		if (data) {
-			console.log(data);
 			setGalleryImageData({
 				...galleryImageData,
 				src: data.project.projectMetadata.images[ 0 ].image.node.sourceUrl,
@@ -76,7 +76,7 @@ export default function Project ({ params }) {
 
 	return (
 		<article className={`project-${id} py-12`}>
-			<div className="flex flex-col inner">
+			<ContainerNarrow>
 				<section className="">
 					<h1 className="mb-4">{title}</h1>
 					<Image
@@ -138,7 +138,7 @@ export default function Project ({ params }) {
 					)}
 					{liveUrl && (
 						<Button asChild
-						        className="max-w-max bg-primary text-neutral hover:bg-accent px-5 py-4 rounded mt-5 cursor-pointer">
+						        className="max-w-max bg-primary text-neutral hover:bg-accent hover:text-primary px-5 py-4 rounded mt-5 cursor-pointer">
 							<a href={liveUrl} target="_blank" rel="noopener">
 								Visit Live Site <FontAwesomeIcon icon={faExternalLink} className="text-neutral"/>
 							</a>
@@ -146,7 +146,7 @@ export default function Project ({ params }) {
 						</Button>
 					)}
 				</section>
-			</div>
+			</ContainerNarrow>
 		</article>
 	)
 		;

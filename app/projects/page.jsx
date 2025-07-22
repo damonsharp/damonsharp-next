@@ -2,17 +2,20 @@
 
 import { useQuery } from "@apollo/client";
 import Spinner from "@/components/Spinner";
-import EditorContent from "@/components/EditorContent";
 import PROJECTS_QUERY from "@/lib/queries/getProjects";
 import Projects from "@/components/Projects";
+import ContainerWide from "@/components/ContainerWide";
+import ContainerNarrow from "@/components/ContainerNarrow";
+import { escHtml } from "@/lib/utils";
+import React from "react";
 
 const ProjectsPage = () => {
 	const title = "Recent Projects";
 	const {
-			  loading,
-			  error,
-			  data
-		  }     = useQuery(PROJECTS_QUERY);
+		loading,
+		error,
+		data
+	} = useQuery(PROJECTS_QUERY);
 
 	if (loading) {
 		return (
@@ -30,10 +33,13 @@ const ProjectsPage = () => {
 
 	return (
 		<section className="bg-accent -mt-6">
-			<div className="inner-wide py-10 px-6 sm:px-0">
-				<EditorContent title={title} html={content}/>
+			<ContainerNarrow className="2xl:items-center 2xl:gap-10 py-10 sm:px-0">
+				<h1 className="">{title}</h1>
+				<div className="flex flex-col">{escHtml(content)}</div>
+			</ContainerNarrow>
+			<ContainerWide>
 				<Projects projects={data?.projects?.nodes}/>
-			</div>
+			</ContainerWide>
 		</section>
 	);
 };

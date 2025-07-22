@@ -5,6 +5,11 @@ import {
 } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+	faBriefcase,
+	faDesktop
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Project = ({
 	project,
@@ -17,7 +22,7 @@ const Project = ({
 		projectMetadata
 	} = project;
 	return (
-		<article className={cn("grid grid-cols-1 md:grid-cols-2", className)}>
+		<article className={cn("grid grid-cols-1 lg:grid-cols-2", className)}>
 			<figure className="">
 				<Image
 					src={projectMetadata?.images[ 0 ]?.image?.node?.sourceUrl}
@@ -29,7 +34,7 @@ const Project = ({
 				/>
 			</figure>
 			<div className="h-full">
-				<div className="flex flex-col justify-staart h-full">
+				<div className="flex flex-col h-full">
 					<h3>{title}</h3>
 					{excerpt && (
 						<div className="flex flex-col">{escHtml(excerpt)}</div>
@@ -38,13 +43,13 @@ const Project = ({
 						<Button asChild
 						        className="bg-primary text-neutral hover:bg-secondary hover:text-neutral px-5 py-4 rounded-sm w-fit justify-self-end">
 							<Link href={`/projects/${slug}`}>
-								View Project Details
+								<FontAwesomeIcon icon={faDesktop}/> View Project Details
 							</Link>
 						</Button>
 						<Button asChild
 						        className="bg-neutral text-primary hover:bg-secondary hover:text-neutral px-5 py-4 rounded-sm w-fit justify-self-end">
 							<Link href={`/projects`}>
-								View All Projects
+								<FontAwesomeIcon icon={faBriefcase}/> View All Projects
 							</Link>
 						</Button>
 
