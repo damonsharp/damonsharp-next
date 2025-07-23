@@ -52,9 +52,9 @@ const ResumePage = () => {
 				</ContainerNarrow>
 			</section>
 			<section
-				className="pt-12 pb-32 bg-linear-[177deg,var(--color-neutral)_82%,var(--color-primary)_calc(70%+2px)]">
-				<ContainerNarrow>
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-14">
+				className="pt-12 pb-32 bg-linear-[177deg,var(--color-neutral)_95%,var(--color-primary)_calc(70%+2px)] md:bg-linear-[177deg,var(--color-neutral)_88%,var(--color-primary)_calc(70%+2px)]">
+				<ContainerWide>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-14">
 						<div className="flex flex-col">
 							<h2 className="flex gap-4 items-center">
 								<FontAwesomeIcon icon={faGaugeHigh} className="text-3xl"/>
@@ -138,7 +138,7 @@ const ResumePage = () => {
 							</ul>
 						</div>
 					</div>
-				</ContainerNarrow>
+				</ContainerWide>
 			</section>
 			<section className="bg-primary text-neutral py-18">
 				<ContainerNarrow>
