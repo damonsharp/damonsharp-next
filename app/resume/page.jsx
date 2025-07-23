@@ -246,7 +246,7 @@ const ResumePage = () => {
 					<p>I hold a B.A. in chemistry from the Ohio State University and completed two years of study at Franklin University in web development, but am mostly self-taught. I continue to keep abreast of new tech stacks, tools, and development tips via Udemy, Laracasts, and other online learning resources.</p>
 				</ContainerNarrow>
 			</section>
-			<section className="py-12">
+			<section className="py-12 bg-neutral">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4">
 						<FontAwesomeIcon icon={faTachographDigital} className="text-3xl"/>
