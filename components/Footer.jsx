@@ -14,7 +14,7 @@ const Footer = ({ className }) => {
 						<div className="w-fit rounded-lg bg-primary border-1 border-accent p-1">
 							<SiteLogo className="size-10"/>
 						</div>
-						<p className="text-accent w-full text-xs m-0">Damon Sharp - {year}</p>
+						<p className="text-neutral w-full text-xs m-0">Damon Sharp - {year}</p>
 					</div>
 					<div className="flex gap-4 col-span-1 items-center justify-end">
 						<SocialIconsList/>

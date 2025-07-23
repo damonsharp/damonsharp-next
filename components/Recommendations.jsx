@@ -10,8 +10,9 @@ const Recommendations = ({ recommendations }) => {
 		recommendation,
 		intro
 	} = recommendations;
+
 	return (
-		<section>
+		<section className="bg-neutral">
 			<ContainerWide className="py-12 2xl:py-24">
 				<h2 className="text-center">
 					<FontAwesomeIcon className="pr-2" icon={faThumbsUp}/> Colleague Recommendations

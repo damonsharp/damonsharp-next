@@ -80,8 +80,8 @@ export default function Home () {
 					</ContainerWide>
 				</section>
 			)}
-			<OpenToWork/>;
-			<Recommendations recommendations={recommendations}/>;
+			<OpenToWork/>
+			<Recommendations recommendations={recommendations}/>
 		</>
 	);
 }
