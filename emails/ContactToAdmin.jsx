@@ -47,8 +47,10 @@ const ContactToAdmin = ({
 						<Row>
 							<div className="p-1 rounded border-2 border-accent max-w-max mx-auto">
 								<Img
-									className="m-auto size-18"
+									className="m-auto size-20"
 									src="https://www.damonsharp.me/dws-logo.svg"
+									width="80px"
+									height="80px"
 								/>
 							</div>
 						</Row>
