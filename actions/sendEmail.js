@@ -6,10 +6,10 @@ import { Resend } from "resend";
 import ContactToAdmin from "@/emails/ContactToAdmin";
 
 export async function sendEmail (prevState, formData) {
-	const fullName        = formData.get("fullName");
-	const email           = formData.get("email");
-	const message         = formData.get("message");
-	const resend          = new Resend(process.env.RESEND_API_KEY);
+	const fullName = formData.get("fullName");
+	const email = formData.get("email");
+	const message = formData.get("message");
+	const resend = new Resend(process.env.RESEND_API_KEY);
 	const validatedFields = contactFormSchema.safeParse({
 		fullName,
 		email,
@@ -30,11 +30,11 @@ export async function sendEmail (prevState, formData) {
 
 	try {
 		const {
-				  data,
-				  error: resendError
-			  } = await resend.emails.send({
+			data,
+			error: resendError
+		} = await resend.emails.send({
 			from: process.env.RESEND_FROM,
-			to: ["delivered@resend.dev"],
+			to: [process.env.RESEND_TO],
 			subject: "Contact from personal website",
 			react: ContactToAdmin({
 				fullName,
