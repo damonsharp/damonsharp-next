@@ -88,7 +88,7 @@
 	}
 
 	h1 {
-		@apply text-4xl mb-10;
+		@apply text-4xl mb-4;
 	}
 
 	h2 {

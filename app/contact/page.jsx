@@ -34,7 +34,7 @@ const ContactPage = () => {
 	} = data?.page;
 	return (
 		<section className="bg-neutral -mt-6 py-10">
-			<ContainerNarrow className="gap-18">
+			<ContainerNarrow className="2xl:gap-18">
 				<h1 className="">Let's Start a Conversation</h1>
 				<div className="flex flex-col">{escHtml(content)}</div>
 				<ContactForm/>
