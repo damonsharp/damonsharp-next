@@ -21,6 +21,10 @@ import { escHtml } from "@/lib/utils";
 import { Hr } from "@react-email/components";
 import { Button } from "@/components/ui/button";
 
+// export const metadata = {
+// 	title: "Resume/CV"
+// };
+
 const ResumePage = () => {
 	const {
 		loading,

@@ -1,5 +1,3 @@
-"use client";
-
 import { useQuery } from "@apollo/client";
 import PAGE_QUERY from "@/lib/queries/getPage";
 import PROJECTS_QUERY from "@/lib/queries/getProjects";
@@ -16,6 +14,10 @@ import Recommendations from "@/components/Recommendations";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
 import { escHtml } from "@/lib/utils";
+
+// export const metadata = {
+// 	title: "Home"
+// };
 
 export default function Home () {
 	const {

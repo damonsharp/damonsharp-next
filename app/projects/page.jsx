@@ -9,6 +9,10 @@ import ContainerNarrow from "@/components/ContainerNarrow";
 import { escHtml } from "@/lib/utils";
 import React from "react";
 
+// export const metadata = {
+// 	title: "Projects"
+// };
+
 const ProjectsPage = () => {
 	const title = "Recent Projects";
 	const {

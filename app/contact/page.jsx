@@ -8,6 +8,10 @@ import React from "react";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import { escHtml } from "@/lib/utils";
 
+// export const metadata = {
+// 	title: "Contact"
+// };
+
 const ContactPage = () => {
 	const {
 		loading,
@@ -29,7 +33,6 @@ const ContactPage = () => {
 	}
 
 	const {
-		title,
 		content
 	} = data?.page;
 	return (

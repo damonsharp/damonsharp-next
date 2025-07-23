@@ -18,8 +18,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-	title: "Damon Sharp",
-	description: "Senior Web Engineer",
+	title: {
+		template: "%s | Damon Sharp",
+		default: "Damon Sharp"
+	},
+	description: "Senior Web Engineer from Ohio, USA specializing in PHP, React/Next.js, WordPress and Laravel web solutions.",
 };
 
 export default function RootLayout ({ children }) {
