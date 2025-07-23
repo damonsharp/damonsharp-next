@@ -147,7 +147,8 @@ const ResumePage = () => {
 						<span>Professional Experience</span>
 					</h2>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">230 Studios, LLC (Freelance Consultancy) — December 2024 to present</h3>
+						<h3 className="text-neutral">230 Studios, LLC (Freelance Consultancy)</h3>
+						<p className="text-neutral text-md italic">December 2024 &ndash; present</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Provide web development services and consulting to small businesses, with a focus on custom WordPress websites, plugins, block based themes and PHP/Laravel application development.</li>
 							<li>Support and development of custom Next JS applications utilizing WordPress as a data layer.</li>
@@ -155,7 +156,8 @@ const ResumePage = () => {
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">Senior Developer II - Build, Kanopi Studios — October 2022 to March 2024</h3>
+						<h3 className="text-neutral">Senior Developer II - Build, Kanopi Studios</h3>
+						<p className="text-neutral text-md italic">October 2022 &ndash; March 2024</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Developed new WordPress websites, internal tools, and plugins with focus on custom integrations across plugins and platforms/APIs.</li>
 							<li>Converted ACF blocks to native React blocks for an internal block theme.</li>
@@ -164,7 +166,8 @@ const ResumePage = () => {
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">Senior Full Stack Developer, Universal Yums — March 2022 to Oct. 2022</h3>
+						<h3 className="text-neutral">Senior Full Stack Developer, Universal Yums</h3>
+						<p className="text-neutral text-md italic">March 2022 &ndash; Oct. 2022</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Developed PHP, WordPress, WooCommerce and Laravel solutions to support universalyums.com Woo/eCommerce initiatives.</li>
 							<li>Architected custom WP-CLI scripts to modify orders, process refunds, and enhance other WooCommerce order data.</li>
@@ -172,7 +175,8 @@ const ResumePage = () => {
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">WordPress Technical Lead, Kanopi Studios — November 2018 to March 2022</h3>
+						<h3 className="text-neutral">WordPress Technical Lead, Kanopi Studios</h3>
+						<p className="text-neutral text-md italic">November 2018 &ndash; March 2022</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Provided technical leadership, support and custom development for a variety of internal and client projects, ensuring deliverables were on time and on budget.</li>
 							<li>Collaborated with cross-functional teams (design, marketing, content, etc.) to align technical capabilities with business objectives.</li>
@@ -183,14 +187,16 @@ const ResumePage = () => {
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">Senior WordPress Developer, Codivated — August 2017 to February 2019</h3>
+						<h3 className="text-neutral">Senior WordPress Developer, Codivated</h3>
+						<p className="text-neutral text-md italic">August 2017 &ndash; February 2019</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Architected and developed integrations for a variety of client projects and WordPress products, including WPtouch Pro, Simple Calendar, Frenzy, and Storemapper.</li>
 						</ul>
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">Senior Digital Engineer, InVentiv Creative Studios — April 2010 to June 2015</h3>
+						<h3 className="text-neutral">Senior Digital Engineer, InVentiv Creative Studios</h3>
+						<p className="text-neutral text-md italic">April 2010 &ndash; June 2015</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Architected and developed custom websites and PHP applications using Laravel and WordPress to support client digital marketing and branding efforts within the pharmaceutical industry.</li>
 							<li>Interfaced with a variety of disciplines to bring projects through to deployment, including client services, design, video production, quality control, and project management.</li>
@@ -200,14 +206,16 @@ const ResumePage = () => {
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">WordPress Developer, MaxFoundry — January 2014 to June 2014</h3>
+						<h3 className="text-neutral">WordPress Developer, MaxFoundry</h3>
+						<p className="text-neutral text-md italic">January 2014 &ndash; June 2014</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>WordPress plugin feature development and support for the MaxGalleria Gallery Platform and its add-ons, including MaxGalleria Facebook.</li>
 						</ul>
 					</div>
 					<hr className="border border-secondary "/>
 					<div className="flex flex-col gap-2">
-						<h3 className="text-neutral">Sharp Web Solutions (Freelance Consultancy) — August 2009 to December 2018</h3>
+						<h3 className="text-neutral">Sharp Web Solutions (Freelance Consultancy)</h3>
+						<p className="text-neutral text-md italic">August 2009 &ndash; December 2018</p>
 						<ul className="flex flex-col gap-2 list-disc pl-5">
 							<li>Provide web development services and consulting to small businesses, with a focus on custom WordPress websites, plugins and PHP/Laravel application development.</li>
 						</ul>
