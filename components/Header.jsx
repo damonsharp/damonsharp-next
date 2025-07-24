@@ -2,16 +2,13 @@ import NavigationMenu from "@/components/NavigationMenu";
 import SiteLogo from "@/components/SiteLogo";
 import SiteSheet from "@/components/SiteSheet";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getGradientPerPathname } from "@/lib/utils";
 
-export default async function Header ({ params }) {
-	const { slug } = await params;
-	const gradient = getGradientPerPathname(slug);
+export default async function Header () {
 
 	return (
 		<header
-			className={`px-4 pt-2 sm:px-0 relative z-1 ${gradient}`}>
-			<div className="grid items-center pb-20 gap-2">
+			className="bg-primary px-4 pt-2 sm:px-0 relative z-1">
+			<div className="grid items-center pb-6 gap-2">
 				<div
 					className="grid grid-cols-4 grid-rows-2 gap-2 items-center text-center justify-around sm:grid-cols-none sm:grid-rows-1 sm:justify-center sm:items-center sm:gap-2 text-2xl font-bold pt-1 max-w-max m-auto">
 					<span

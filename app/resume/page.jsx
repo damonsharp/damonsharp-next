@@ -44,85 +44,85 @@ export default async function ResumePage ({ params }) {
 			<section
 				className="pt-12 pb-32 bg-linear-[177deg,var(--color-neutral)_95%,var(--color-primary)_calc(70%+2px)] md:bg-linear-[177deg,var(--color-neutral)_88%,var(--color-primary)_calc(70%+2px)]">
 				<ContainerWide>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-14">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
 						<div className="flex flex-col">
 							<h2 className="flex gap-4 items-center">
-								<FontAwesomeIcon icon={faGaugeHigh} className="text-3xl"/>
+								<FontAwesomeIcon icon={faGaugeHigh} className="flex-shrink-0 size-12"/>
 								<span>Career Highlights</span>
 							</h2>
 							<Hr/>
 							<ul className="flex flex-col">
 								<li className="flex items-center">
 									<FontAwesomeIcon
-										icon={faChevronCircleRight} className="text-xl"/>
+										icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Multiple years of full stack development experience within consulting, agency, and product engineering roles.</span>
 								</li>
 								<li className="flex items-center">
 									<FontAwesomeIcon
-										icon={faChevronCircleRight} className="text-xl"/>
+										icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Created internal tools/plugins to help facilitate efficiency and consistency.</span>
 								</li>
 								<li className="flex items-center">
 									<FontAwesomeIcon
-										icon={faChevronCircleRight} className="text-xl"/>
+										icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Development lead & technical client contact for multiple concurrent projects.</span>
 								</li>
 								<li className="flex items-center">
 									<FontAwesomeIcon
-										icon={faChevronCircleRight} className="text-xl"/>
+										icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Multiple years of experience working within remotely distributed teams.</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>WordPress Engineer since v2.3.</span>
 								</li>
 							</ul>
 						</div>
 						<div className="flex flex-col">
 							<h2 className="flex gap-3 items-center">
-								<FontAwesomeIcon icon={faCode} className="text-3xl"/>
+								<FontAwesomeIcon icon={faCode} className="flex-shrink-0 size-12"/>
 								<span>Technical Skills/Stacks</span>
 							</h2>
 							<Hr/>
 							<ul className="flex flex-col gap-2">
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>WordPress/Headless WordPress/VIP</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>JavaScript, React/Next.js, jQuery</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>PHP, Laravel, Composer</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>MySQL & GraphQL</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>PHPUnit, Xdebug</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Command line, WP-CLI, Artisan</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>HTML, CSS, Custom Properties, LESS, Sass, Tailwind CSS</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>npm, webpack, Vite</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>Git (GitHub/GitLab/Bitbucket), SVN</span>
 								</li>
 								<li className="flex items-center">
-									<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+									<FontAwesomeIcon icon={faChevronCircleRight} className="flex-shrink-0 size-5"/>
 									<span>CircleCI, GitHub Actions</span>
 								</li>
 							</ul>
@@ -133,7 +133,7 @@ export default async function ResumePage ({ params }) {
 			<section className="bg-primary text-neutral py-18">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4 text-neutral pb-8">
-						<FontAwesomeIcon icon={faUserTie} className="text-3xl"/>
+						<FontAwesomeIcon icon={faUserTie} className="flex-shrink-0 size-12"/>
 						<span>Professional Experience</span>
 					</h2>
 					<div className="flex flex-col gap-2">
@@ -215,20 +215,20 @@ export default async function ResumePage ({ params }) {
 			<section className="bg-accent text-primary pt-12">
 				<ContainerNarrow className="items-center justify-center">
 					<h2 className="flex items-center gap-4 text-primary">
-						<FontAwesomeIcon icon={faPeopleGroup} className="text-3xl"/>
+						<FontAwesomeIcon icon={faPeopleGroup} className="flex-shrink-0 size-12"/>
 						<span>Community Involvement</span>
 					</h2>
 					<ul className="flex flex-col gap-1">
 						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
 							<span>Member of the Columbus &amp; Dayton, OH WordPress meetups</span>
 						</li>
 						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
 							<span>WordCamp Columbus Volunteer</span>
 						</li>
 						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="text-xl"/>
+							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
 							<span>Organized my own WordPress meetup in Marysville</span>
 						</li>
 					</ul>
@@ -238,7 +238,7 @@ export default async function ResumePage ({ params }) {
 				className="text-neutral pt-28 pb-12 bg-linear-[2deg,var(--color-secondary)_70%,var(--color-accent)_calc(70%+2px)]">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4 text-neutral">
-						<FontAwesomeIcon icon={faGraduationCap} className="text-3xl"/>
+						<FontAwesomeIcon icon={faGraduationCap} className="flex-shrink-0 size-12"/>
 						<span>Education</span>
 					</h2>
 					<p>I hold a B.A. in chemistry from the Ohio State University and completed two years of study at Franklin University in web development, but am mostly self-taught. I continue to keep abreast of new tech stacks, tools, and development tips via Udemy, Laracasts, and other online learning resources.</p>
@@ -247,7 +247,7 @@ export default async function ResumePage ({ params }) {
 			<section className="py-12 bg-neutral">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4">
-						<FontAwesomeIcon icon={faTachographDigital} className="text-3xl"/>
+						<FontAwesomeIcon icon={faTachographDigital} className="flex-shrink-0 size-12"/>
 						<span>Projects</span>
 					</h2>
 					<p>Throughout my development career I have had the privilege of working on a variety of different projects, including full website builds, plugin/product development and integrations, theme development, data processing scripts, and site migrations.</p>

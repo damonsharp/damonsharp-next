@@ -3,6 +3,9 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import EditorContent from "@/components/EditorContent";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 const Project = ({
 	project,
@@ -35,9 +38,10 @@ const Project = ({
 						<EditorContent>{excerpt}</EditorContent>
 					)}
 					<Button asChild
-					        className="bg-primary text-neutral hover:bg-secondary px-5 py-4 rounded-sm w-fit justify-self-end">
-						<Link href={`/projects/${slug}`}>
-							View Project Details
+					        className="bg-primary text-neutral hover:bg-secondary px-5 py-4 rounded-sm w-fit justify-self-end self-center">
+						<Link href={`/projects/${slug}`} className="flex items-center">
+							<span>View Project Details</span>
+							<FontAwesomeIcon icon={faChevronRight} className="size-4"/>
 						</Link>
 					</Button>
 				</div>
