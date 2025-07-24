@@ -16,7 +16,7 @@ const Recommendations = ({ recommendations }) => {
 			<ContainerWide className="py-12 2xl:py-24">
 				<h2 className="flex items-center text-center justify-center">
 					<FontAwesomeIcon className="size-10" icon={faThumbsUp}/>
-					<span>Colleague Recommendations</span>
+					<span>Recommendations</span>
 				</h2>
 				<EditorContent className="text-center mb-8 flex gap-2">{intro}</EditorContent>
 				<div className="grid grid-cols-1 xl:grid-cols-2">
