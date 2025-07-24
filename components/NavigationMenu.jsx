@@ -1,30 +1,13 @@
-"use client";
-
 import NavigationMenuItem from "@/components/NavigationMenuItem";
-import { useQuery } from "@apollo/client";
 import MAIN_NAV_QUERY from "@/lib/queries/getMainNavMenu";
 import { flatListToHierarchical } from "@/lib/utils";
-import NavigationSkeleton from "@/components/NavigationSkeleton";
+import { query } from "@/lib/apolloClient";
 
-function NavigationMenu ({
+export default async function NavigationMenu ({
 	desktop = true,
 	setSheetOpen
 }) {
-	const {
-			  loading,
-			  error,
-			  data
-		  } = useQuery(MAIN_NAV_QUERY);
-
-	if (loading) {
-		return (
-			<NavigationSkeleton desktop={desktop}/>
-		);
-	}
-
-	if (error) {
-		return null;
-	}
+	const { data } = await query({ query: MAIN_NAV_QUERY });
 
 	const menuItems = flatListToHierarchical(
 		data?.menu?.menuItems.nodes || [],
@@ -36,11 +19,9 @@ function NavigationMenu ({
 			<ul className={`grid ${desktop ? "grid-flow-col gap-18" : "grid-flow-row gap-4"} justify-center items-center text-center`}>
 				{menuItems && menuItems.map(menuItem => (
 					<NavigationMenuItem key={menuItem.id} menuItem={menuItem} desktop={desktop}
-										setSheetOpen={setSheetOpen}/>
+					                    setSheetOpen={setSheetOpen}/>
 				))}
 			</ul>
 		</nav>
 	);
 }
-
-export default NavigationMenu;

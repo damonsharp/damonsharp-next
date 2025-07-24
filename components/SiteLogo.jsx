@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import logo from '@/public/dws-logo.svg';
+import Image from "next/image";
+import logo from "@/public/dws-logo.svg";
 
 const SiteLogo = ({
 	width = 50,

@@ -1,20 +1,17 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useQuery } from "@apollo/client";
 import SITE_SETTINGS_QUERY from "@/lib/queries/getSiteSettings";
-import {
-	faComments
-} from "@fortawesome/free-solid-svg-icons";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContainerNarrow from "@/components/ContainerNarrow";
+import { query } from "@/lib/apolloClient";
 
-const OpenToWork = () => {
-	const {
-		data,
-		loading,
-		error
-	} = useQuery(SITE_SETTINGS_QUERY);
+export default async function OpenToWork () {
+	const { data } = await query({
+		query: SITE_SETTINGS_QUERY,
+	});
+
 	const openToWork = data?.siteSettings?.openToWork?.openToWork;
 	const textAvailable = data?.siteSettings?.openToWork?.textAvailable;
 	const textNotAvailable = data?.siteSettings?.openToWork?.textNotAvailable;
@@ -40,6 +37,4 @@ const OpenToWork = () => {
 			</ContainerNarrow>
 		</section>
 	);
-};
-
-export default OpenToWork;
+}

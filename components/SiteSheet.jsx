@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Sheet,
 	SheetContent,
@@ -27,7 +29,7 @@ const SiteSheet = ({ className }) => {
 					<SheetDescription></SheetDescription>
 				</SheetHeader>
 				<NavigationMenu sheetOpen={sheetOpen} setSheetOpen={setSheetOpen} desktop={false}
-								className="flex-col items-start justify-start"/>
+				                className="flex-col items-start justify-start"/>
 				<SheetFooter></SheetFooter>
 			</SheetContent>
 		</Sheet>

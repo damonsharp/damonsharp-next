@@ -1,10 +1,9 @@
-import { useQuery } from "@apollo/client";
+import { query } from "@/lib/apolloClient";
 import PAGE_QUERY from "@/lib/queries/getPage";
 import PROJECTS_QUERY from "@/lib/queries/getProjects";
 import ProjectBanner from "@/components/ProjectBanner";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Spinner from "@/components/Spinner";
 import React from "react";
 import SocialIconsList from "@/components/SocialIconsList";
 import OpenToWork from "@/components/OpenToWork";
@@ -13,43 +12,26 @@ import { faFileText } from "@fortawesome/free-solid-svg-icons";
 import Recommendations from "@/components/Recommendations";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
-import { escHtml } from "@/lib/utils";
+import EditorContent from "@/components/EditorContent";
+import getPage from "@/lib/queries/getPage";
 
-// export const metadata = {
-// 	title: "Home"
-// };
+export async function generateMetadata () {
+	return {
+		title: "Home"
+	};
+}
 
-export default function Home () {
-	const {
-		loading,
-		error,
-		data
-	} = useQuery(
-		PAGE_QUERY,
-		{
-			variables: {
-				"id": "home",
-				"recommendations": true
-			}
-		}
-	);
+export default async function Home () {
 
-	const { data: projectsData } = useQuery(PROJECTS_QUERY);
+	const { data: projectsData } = await query({ query: PROJECTS_QUERY });
 
-	if (loading) {
-		return <Spinner/>;
-	}
-
-	if (error) {
-		return <p>Error : {error.message}</p>;
-	}
+	const { page } = await getPage("home", true);
 
 	const {
 		title,
 		content,
 		recommendations,
-		intro
-	} = data?.page;
+	} = page;
 
 	return (
 		<>
@@ -57,7 +39,7 @@ export default function Home () {
 				className="text-primary pt-10 pb-36 bg-linear-[180deg,var(--color-neutral)_90%,var(--color-accent)_calc(70%+2px)] -mt-8">
 				<ContainerNarrow className="pb-10">
 					<h1 className="">{title}</h1>
-					<div className="flex flex-col">{escHtml(content)}</div>
+					<EditorContent>{content}</EditorContent>
 				</ContainerNarrow>
 				<ContainerNarrow>
 					<p>Want to learn more about my profession qualifications?</p>

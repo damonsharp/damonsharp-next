@@ -1,8 +1,5 @@
 import Image from "next/image";
-import {
-	cn,
-	escHtml
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +7,7 @@ import {
 	faDesktop
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EditorContent from "@/components/EditorContent";
 
 const Project = ({
 	project,
@@ -37,7 +35,7 @@ const Project = ({
 				<div className="flex flex-col h-full">
 					<h3>{title}</h3>
 					{excerpt && (
-						<div className="flex flex-col">{escHtml(excerpt)}</div>
+						<EditorContent>{excerpt}</EditorContent>
 					)}
 					<div className="flex items-center">
 						<Button asChild

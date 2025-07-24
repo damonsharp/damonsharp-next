@@ -1,10 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import {
-	cn,
-	escHtml
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import EditorContent from "@/components/EditorContent";
 
 const Recommendation = ({
 	recommendation,
@@ -19,9 +17,9 @@ const Recommendation = ({
 	return (
 		<div
 			className={`${cn("flex flex-col gap-10 justify-between rounded-md border-2 border-primary p-12", className)}`}>
-			<blockquote className="flex flex-col sm:flex-row gap-2">
-				<FontAwesomeIcon className="sm:self-start text-[60px] pr-3" icon={faQuoteLeft}/>
-				<div className="py-6 flex flex-col">{escHtml(content)}</div>
+			<blockquote className="flex flex-col sm:flex-row">
+				<FontAwesomeIcon className="flex-1/12 sm:self-start max-w-10" icon={faQuoteLeft}/>
+				<EditorContent className="flex-11/12 py-6">{content}</EditorContent>
 			</blockquote>
 			<p className="text-center font-bold">&#8764; {person} &ndash; {title}</p>
 		</div>
