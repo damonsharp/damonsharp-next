@@ -37,9 +37,8 @@ export default async function ProjectsPage ({ params }) {
 			<section className="bg-linear-[3deg,var(--color-accent)_85%,var(--color-neutral)_calc(70%+2px)] ">;
 				<ContainerWide>
 					<Projects projects={data?.projects?.nodes}/>
-				</ContainerWide>;
+				</ContainerWide>
 			</section>
-			;
 		</>
 	);
 }
