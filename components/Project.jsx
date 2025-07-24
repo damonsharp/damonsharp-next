@@ -1,10 +1,8 @@
 import Image from "next/image";
-import {
-	cn,
-	escHtml
-} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import EditorContent from "@/components/EditorContent";
 
 const Project = ({
 	project,
@@ -34,7 +32,7 @@ const Project = ({
 				<div className="p-6 flex flex-col justify-between h-full">
 					<h2>{title}</h2>
 					{excerpt && (
-						<div className="flex flex-col">{escHtml(excerpt)}</div>
+						<EditorContent>{excerpt}</EditorContent>
 					)}
 					<Button asChild
 					        className="bg-primary text-neutral hover:bg-secondary px-5 py-4 rounded-sm w-fit justify-self-end">

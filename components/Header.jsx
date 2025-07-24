@@ -1,15 +1,12 @@
-"use client";
-
 import NavigationMenu from "@/components/NavigationMenu";
 import SiteLogo from "@/components/SiteLogo";
 import SiteSheet from "@/components/SiteSheet";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { usePathname } from "next/navigation";
 import { getGradientPerPathname } from "@/lib/utils";
 
-const Header = () => {
-	const pathname = usePathname();
-	let gradient   = getGradientPerPathname(pathname);
+export default async function Header ({ params }) {
+	const { slug } = await params;
+	const gradient = getGradientPerPathname(slug);
 
 	return (
 		<header
@@ -32,5 +29,3 @@ const Header = () => {
 		</header>
 	);
 };
-
-export default Header;

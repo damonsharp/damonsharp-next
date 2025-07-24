@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function NavigationMenuItem ({menuItem, desktop, setSheetOpen}) {
+function NavigationMenuItem ({
+	menuItem,
+	desktop,
+	setSheetOpen
+}) {
 	const pathname = usePathname();
 
 	return (
@@ -12,8 +16,8 @@ function NavigationMenuItem ({menuItem, desktop, setSheetOpen}) {
 				className={`text-neutral text-shadow text-shadow-2xs text-center text-sm hover:border-b-2 hover:border-b-accent ${pathname === menuItem.url ? "border-b-2 border-b-accent" : ""}`}
 				href={menuItem.url}
 				onClick={() => {
-					if ( !desktop ) {
-						setSheetOpen(false)
+					if (! desktop) {
+						setSheetOpen(false);
 					}
 				}}
 			>

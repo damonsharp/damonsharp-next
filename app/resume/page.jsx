@@ -1,10 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import PAGE_QUERY from "@/lib/queries/getPage";
-import { useQuery } from "@apollo/client";
-import Spinner from "@/components/Spinner";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,42 +13,32 @@ import {
 	faTachographDigital,
 	faUserTie
 } from "@fortawesome/free-solid-svg-icons";
-import { escHtml } from "@/lib/utils";
 import { Hr } from "@react-email/components";
 import { Button } from "@/components/ui/button";
+import { query } from "@/lib/apolloClient";
+import EditorContent from "@/components/EditorContent";
+import getPage from "@/lib/queries/getPage";
 
-// export const metadata = {
-// 	title: "Resume/CV"
-// };
+export async function generateMetadata () {
+	return {
+		title: "Resume/CV"
+	};
+}
 
-const ResumePage = () => {
-	const {
-		loading,
-		error,
-		data
-	} = useQuery(PAGE_QUERY, {
-		variables: { "id": "resume" }
-	});
-
-	if (loading) {
-		return <Spinner/>;
-	}
-
-	if (error) {
-		return <p>Error : {error.message}</p>;
-	}
-
+export default async function ResumePage ({ params }) {
+	const { page } = await getPage("resume");
 	const {
 		title,
 		content
-	} = data?.page;
+	} = page;
+
 	return (
 		<>
 			<section className="bg-secondary text-neutral -mt-6 py-12">
 				<ContainerNarrow className="flex flex-col gap-2">
 					<h1 className="text-neutral">{title}</h1>
 					<h2 className="text-neutral text-lg">Overview</h2>
-					<div className="flex flex-col">{escHtml(content)}</div>
+					<EditorContent>{content}</EditorContent>
 				</ContainerNarrow>
 			</section>
 			<section
@@ -277,6 +263,4 @@ const ResumePage = () => {
 			</section>
 		</>
 	);
-};
-
-export default ResumePage;
+}

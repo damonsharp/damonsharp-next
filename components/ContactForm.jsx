@@ -1,24 +1,17 @@
 "use client";
 
 import { sendEmail } from "@/actions/sendEmail";
-import {
-	useActionState,
-	useEffect
-} from "react";
+import { useActionState } from "react";
 import { Button } from "@/components/ui/button";
 import { contactFormInitialState } from "@/lib/validators";
 import {
-	faCheckSquare,
-	faArrowAltCircleRight
+	faArrowAltCircleRight,
+	faCheckSquare
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactForm = ({ className }) => {
 	const [formState, formAction, isPending] = useActionState(sendEmail, contactFormInitialState);
-
-	useEffect(() => {
-		console.log(formState);
-	}, [formState]);
 
 	return (
 		<>
