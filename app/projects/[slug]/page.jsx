@@ -37,7 +37,7 @@ export default async function Project ({ params }) {
 	return (
 		<article className={`project-${id} py-12`}>
 			<ContainerNarrow>
-				<section className="flex flex-col gap-2 mb-8">
+				<section className="flex flex-col mb-8">
 					<h1>{title}</h1>
 					{content && (
 						<EditorContent>{content}</EditorContent>

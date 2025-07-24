@@ -31,8 +31,8 @@ export default function RootLayout ({
 	params
 }) {
 	return (
-		<html lang="en" className="min-h-screen bg-accent">
-		<body className={`bg-neutral text-primary ${geistSans.variable} ${geistMono.variable}`}>
+		<html lang="en">
+		<body className={`bg-neutral text-primary min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
 		<main className="flex flex-col h-screen ">
 			<Header params={params}/>
 			<div className="mb-auto">
