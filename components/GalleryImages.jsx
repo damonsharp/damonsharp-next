@@ -49,9 +49,9 @@ const GalleryImages = ({
 
 						return (
 							<li key={image.image.node.id}
-							    className={`w-16 md:w-24 lg:w-40 border-2 ${galleryImageData.thumbnailIndex === i ? "border-secondary" : "border-neutral"} rounded cursor-pointer overflow-clip transition hover:border-secondary`}>
+							    className={`border-2 ${galleryImageData.thumbnailIndex === i ? "border-secondary" : "border-neutral"} rounded cursor-pointer overflow-clip transition hover:border-secondary`}>
 								<img
-									className="size-max"
+									className="w-full h-auto"
 									src={srcUrl}
 									alt={image.image?.node?.altText}
 									onClick={(event) => {

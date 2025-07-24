@@ -2,8 +2,17 @@ import NavigationMenu from "@/components/NavigationMenu";
 import SiteLogo from "@/components/SiteLogo";
 import SiteSheet from "@/components/SiteSheet";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { query } from "@/lib/apolloClient";
+import MAIN_NAV_QUERY from "@/lib/queries/getMainNavMenu";
+import { flatListToHierarchical } from "@/lib/utils";
 
 export default async function Header () {
+	const { data } = await query({ query: MAIN_NAV_QUERY });
+
+	const menuItems = flatListToHierarchical(
+		data?.menu?.menuItems.nodes || [],
+		{ childrenKey: "childItems" }
+	);
 
 	return (
 		<header
@@ -18,9 +27,10 @@ export default async function Header () {
 						width={75} height={75} prioritize={true}/>
 					<span
 						className="text-accent col-start-2 col-end-4 row-span-1 row-start-2 row-end-3 text-shadow-[0px_0px_2px_var(--color-primary)] text-lg text-center sm:col-start-3 sm:col-end-4 sm:row-start-1 sm:row-end-1 sm:text-2xl sm:text-left">Web Engineer</span>
-					<SiteSheet className="text-accent col-start-4 row-span-2 sm:col-start-none sm:col-end-none"/>
+					<SiteSheet className="text-accent col-start-4 row-span-2 sm:col-start-none sm:col-end-none"
+					           menuItems={menuItems}/>
 				</div>
-				<NavigationMenu setSheetOpen={false}/>
+				<NavigationMenu setSheetOpen={false} menuItems={menuItems}/>
 			</div>
 			<Breadcrumbs/>
 		</header>
