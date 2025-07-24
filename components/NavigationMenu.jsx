@@ -7,7 +7,7 @@ export default function NavigationMenu ({
 }) {
 
 	return (
-		<nav className={`${desktop && "hidden sm:flex sm:justify-center sm:items-center"} uppercase mt-10`}>
+		<nav className={`${desktop && "hidden sm:flex sm:justify-center sm:items-center"} uppercase mt-10 sm:mt-0`}>
 			<ul className={`grid ${desktop ? "grid-flow-col gap-18" : "grid-flow-row gap-4"} justify-center items-center text-center`}>
 				{menuItems && menuItems.map(menuItem => (
 					<NavigationMenuItem key={menuItem.id} menuItem={menuItem} desktop={desktop}
