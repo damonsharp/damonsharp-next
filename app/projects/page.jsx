@@ -27,14 +27,19 @@ export default async function ProjectsPage ({ params }) {
 	} = data?.page;
 
 	return (
-		<section className="bg-accent -mt-6">
-			<ContainerNarrow className="2xl:items-center 2xl:gap-10 py-10 sm:px-0">
-				<h1 className="">{title}</h1>
-				<EditorContent>{content}</EditorContent>
-			</ContainerNarrow>
-			<ContainerWide>
-				<Projects projects={data?.projects?.nodes}/>
-			</ContainerWide>
-		</section>
+		<>
+			<section className="bg-neutral -mt-6">
+				<ContainerNarrow className="2xl:items-center 2xl:gap-10 py-10 sm:px-0">
+					<h1 className="">{title}</h1>
+					<EditorContent>{content}</EditorContent>
+				</ContainerNarrow>
+			</section>
+			<section className="bg-linear-[3deg,var(--color-accent)_85%,var(--color-neutral)_calc(70%+2px)] ">;
+				<ContainerWide>
+					<Projects projects={data?.projects?.nodes}/>
+				</ContainerWide>;
+			</section>
+			;
+		</>
 	);
 }
