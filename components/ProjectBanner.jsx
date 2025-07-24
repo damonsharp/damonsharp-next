@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditorContent from "@/components/EditorContent";
+import React from "react";
 
 const Project = ({
 	project,
@@ -19,6 +20,7 @@ const Project = ({
 		slug,
 		projectMetadata
 	} = project;
+
 	return (
 		<article className={cn("grid grid-cols-1 lg:grid-cols-2", className)}>
 			<figure className="">
@@ -36,6 +38,12 @@ const Project = ({
 					<h3>{title}</h3>
 					{excerpt && (
 						<EditorContent>{excerpt}</EditorContent>
+					)}
+					{projectMetadata?.techStack && (
+						<div>
+							<h2 className="text-lg">Tech stack:</h2>
+							<p>{projectMetadata?.techStack}</p>
+						</div>
 					)}
 					<div className="flex items-center">
 						<Button asChild

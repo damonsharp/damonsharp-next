@@ -1,5 +1,5 @@
 import { query } from "@/lib/apolloClient";
-import PAGE_QUERY from "@/lib/queries/getPage";
+import getPage from "@/lib/queries/getPage";
 import PROJECTS_QUERY from "@/lib/queries/getProjects";
 import ProjectBanner from "@/components/ProjectBanner";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,6 @@ import Recommendations from "@/components/Recommendations";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
 import EditorContent from "@/components/EditorContent";
-import getPage from "@/lib/queries/getPage";
 
 export async function generateMetadata () {
 	return {
