@@ -9,9 +9,8 @@ const SiteLogo = ({
 	prioritize = false
 }) => {
 	return (
-		<Link href="/">
+		<Link className={className} href="/">
 			<Image
-				className={className}
 				src={logo}
 				alt="Damon Sharp Logo"
 				width={width}
