@@ -62,7 +62,7 @@ const ContactForm = ({ className }) => {
 							<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.message[ 0 ]}</p>
 						)}
 						<textarea
-							className="p-3 mt-1 rounded-xs w-full h-64 border-accent border border-accent"
+							className="p-3 mt-1 rounded-xs w-full h-64 border border-accent"
 							id="message"
 							name="message"
 							defaultValue={formState.message}

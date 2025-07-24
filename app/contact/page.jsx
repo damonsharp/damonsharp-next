@@ -15,8 +15,8 @@ export default async function ContactPage () {
 	const { content } = page;
 
 	return (
-		<section className="bg-neutral -mt-6 py-10">
-			<ContainerNarrow className="2xl:gap-18">
+		<section className="-mt-6 py-10">
+			<ContainerNarrow className="2xl:gap-10">
 				<h1 className="">Let's Start a Conversation</h1>
 				<EditorContent>{content}</EditorContent>
 				<ContactForm/>
