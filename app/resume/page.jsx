@@ -5,6 +5,7 @@ import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+	faArrowAltCircleRight,
 	faChevronCircleRight,
 	faCode,
 	faGaugeHigh,
@@ -255,8 +256,9 @@ export default async function ResumePage ({ params }) {
 						asChild
 						className="bg-primary text-neutral hover:bg-accent hover:text-primary px-5 py-4 rounded-sm w-fit"
 					>
-						<Link href={`/projects`}>
-							View Projects
+						<Link href={`/projects`} className="flex items-center">
+							<span>View Projects</span>
+							<FontAwesomeIcon icon={faArrowAltCircleRight}/>
 						</Link>
 					</Button>
 				</ContainerNarrow>

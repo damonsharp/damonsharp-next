@@ -34,6 +34,8 @@
 	--angle-primary-accent: linear-gradient(2deg, var(--color-primary) 70%, var(--color-accent) calc(70% + 2px));
 	--angle-primary-neutral: linear-gradient(177deg, var(--color-primary) 70%, var(--color-neutral) calc(70% + 2px));
 
+	--font-main: var(--font-geist-sans);
+
 	@keyframes fade-in {
 		0% {
 			opacity: 0;
@@ -83,12 +85,16 @@
 		border-color: var(--color-gray-200, currentcolor);
 	}
 
+	body {
+		@apply font-main;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-bold text-primary text-shadow-xs;
+		@apply font-bold text-primary;
 	}
 
 	h1 {
-		@apply text-4xl mb-4;
+		@apply text-4xl mb-4 text-shadow-xs;
 	}
 
 	h2 {

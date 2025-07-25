@@ -20,7 +20,7 @@ const Project = ({
 	} = project;
 	return (
 		<article
-			className={cn("flex flex-col gap-2 bg-neutral text-primary shadow-md rounded-lg overflow-clip mb-6 sm:mb-0 max-w-[600px]", className)}>
+			className={cn("flex flex-col gap-2 bg-neutral text-primary border-2 border-gray-100 shadow-md rounded-lg overflow-clip mb-6 sm:mb-0 max-w-[600px]", className)}>
 			<figure className="border-b-2 border-b-gray-100">
 				<Image
 					src={projectMetadata?.images[ 0 ]?.image?.node?.sourceUrl}

@@ -58,7 +58,7 @@ export default async function Home () {
 			{projectsData && (
 				<section className="bg-accent pb-12">
 					<ContainerWide>
-						<h2 className="text-neutral text-shadow-md">Latest Project</h2>
+						<h2 className="text-primary">Latest Project</h2>
 						<ProjectBanner project={projectsData?.projects?.nodes.slice(0, 1)[ 0 ]}/>
 					</ContainerWide>
 				</section>
