@@ -23,7 +23,7 @@ const SiteSheet = ({
 		<Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
 			<SheetTrigger asChild className={cn(className, "sm:hidden")}>
 				<div>
-					<MenuIcon onClick={() => {
+					<MenuIcon width={40} height={40} onClick={() => {
 						setSheetOpen(! sheetOpen);
 					}} className="m-auto hover:cursor-pointer text-accent"/>
 				</div>

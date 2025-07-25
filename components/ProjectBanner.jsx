@@ -45,7 +45,7 @@ const Project = ({
 							<p>{projectMetadata?.techStack}</p>
 						</div>
 					)}
-					<div className="flex items-center">
+					<div className="flex gap-2 sm:gap-4 items-center">
 						<Button asChild
 						        className="bg-primary text-neutral hover:bg-secondary hover:text-neutral px-5 py-4 rounded-sm w-fit justify-self-end">
 							<Link href={`/projects/${slug}`}>

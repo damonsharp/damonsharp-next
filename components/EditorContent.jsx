@@ -11,7 +11,9 @@ const EditorContent = ({
 	className
 }) => {
 	return (
-		<div className={cn("flex flex-col", className)}>{escHtml(children)}</div>
+		<div className={cn("flex flex-col", className)}>
+			{escHtml(children)}
+		</div>
 	);
 };
 

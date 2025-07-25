@@ -51,7 +51,6 @@ export default async function Home () {
 								<FontAwesomeIcon icon={faFileText}/> View Resume/CV
 							</Link>
 						</Button>
-						<SocialIconsList/>
 					</div>
 				</ContainerNarrow>
 			</section>

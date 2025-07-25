@@ -31,11 +31,11 @@ export default function RootLayout ({
 	params
 }) {
 	return (
-		<html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}>
 		<body className="bg-neutral text-primary min-h-screen">
-		<main className="flex flex-col h-screen ">
+		<main className="flex flex-col h-screen">
 			<Header params={params}/>
-			<div className="mb-auto">
+			<div className="mb-auto relative">
 				{children}
 			</div>
 			<Footer/>

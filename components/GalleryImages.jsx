@@ -43,7 +43,7 @@ const GalleryImages = ({
 				}}
 			/>
 			{images.length > 1 && (
-				<ul className="mt-6 flex gap-2 lg:gap-6 justify-center items-center">
+				<ul className="mt-6 flex gap-2 px-4 lg:gap-6 justify-center items-center">
 					{images.map((image, i) => {
 						const srcUrl = image.image?.node?.sourceUrl;
 
@@ -51,7 +51,7 @@ const GalleryImages = ({
 							<li key={image.image.node.id}
 							    className={`border-2 ${galleryImageData.thumbnailIndex === i ? "border-secondary" : "border-neutral"} rounded cursor-pointer overflow-clip transition hover:border-secondary`}>
 								<img
-									className="w-full h-auto"
+									className="max-w-44 h-auto"
 									src={srcUrl}
 									alt={image.image?.node?.altText}
 									onClick={(event) => {

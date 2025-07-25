@@ -10,7 +10,7 @@ import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const SocialIconsList = () => {
 	return (
-		<div className="flex gap-4 col-span-1 items-center">
+		<div className="flex gap-3 col-span-1 items-center">
 			<SocialIcon link="https://www.linkedin.com/in/damonsharp" icon={faLinkedin}
 			            className="size-6 text-2xl text-neutral hover:text-accent" label="LinkedIn icon"/>
 			<SocialIcon link="https://github.com/damonsharp" icon={faGithub}
