@@ -12,15 +12,15 @@ const SocialIconsList = () => {
 	return (
 		<div className="flex gap-4 col-span-1 items-center">
 			<SocialIcon link="https://www.linkedin.com/in/damonsharp" icon={faLinkedin}
-			            className="size-6 text-2xl text-neutral hover:text-accent" aria-label="LinkedIn icon"/>
+			            className="size-6 text-2xl text-neutral hover:text-accent" label="LinkedIn icon"/>
 			<SocialIcon link="https://github.com/damonsharp" icon={faGithub}
-			            className="size-6 text-2xl text-neutral hover:text-accent" aria-label="GitHub icon"/>
+			            className="size-6 text-2xl text-neutral hover:text-accent" label="GitHub icon"/>
 			<SocialIcon link="https://phpc.social/@damonsharp" icon={faMastodon}
-			            className="size-6 text-2xl text-neutral hover:text-accent" aria-label="Mastodon icon"/>
+			            className="size-6 text-2xl text-neutral hover:text-accent" label="Mastodon icon"/>
 			<SocialIcon link="/contact" icon={faSquareEnvelope}
-			            className="size-6 text-2xl text-neutral hover:text-accent" aria-label="Email icon"/>
+			            className="size-6 text-2xl text-neutral hover:text-accent" label="Email icon"/>
 			<SocialIcon link="https://x.com/damonsharp" icon={faXTwitter}
-			            className="size-6 text-2xl text-neutral hover:text-accent" aria-label="Twitter (X) icon"/>
+			            className="size-6 text-2xl text-neutral hover:text-accent" label="Twitter (X) icon"/>
 		</div>
 	);
 };
