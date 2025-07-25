@@ -6,6 +6,7 @@ import ContainerWide from "@/components/ContainerWide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faArrowAltCircleRight,
+	faArrowAltCircleDown,
 	faChevronCircleRight,
 	faCode,
 	faGaugeHigh,
@@ -36,8 +37,19 @@ export default async function ResumePage ({ params }) {
 	return (
 		<>
 			<section className="bg-secondary text-neutral -mt-6 py-12">
-				<ContainerNarrow className="flex flex-col gap-2">
-					<h1 className="text-neutral">{title}</h1>
+				<ContainerNarrow className="flex flex-col gap-8 sm:gap-2">
+					<div className="flex flex-col gap-2 sm:gap-4 sm:flex-row sm:items-center justify-between">
+						<h1 className="text-neutral w-full">{title}</h1>
+						<Button
+							asChild
+							className="bg-accent text-primary hover:bg-neutral hover:text-primary px-5 py-4 rounded-sm w-fit"
+						>
+							<Link href={`/resume.pdf`} download={true} className="flex items-center">
+								<span>Download PDF</span>
+								<FontAwesomeIcon icon={faArrowAltCircleDown}/>
+							</Link>
+						</Button>
+					</div>
 					<h2 className="text-neutral text-lg">Overview</h2>
 					<EditorContent>{content}</EditorContent>
 				</ContainerNarrow>
@@ -131,7 +143,7 @@ export default async function ResumePage ({ params }) {
 					</div>
 				</ContainerWide>
 			</section>
-			<section className="bg-primary text-neutral py-18">
+			<section className="bg-primary text-neutral pt-8 pb-18 xl:pt-18">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4 text-neutral pb-8">
 						<FontAwesomeIcon icon={faUserTie} className="flex-shrink-0 size-12"/>
@@ -213,39 +225,7 @@ export default async function ResumePage ({ params }) {
 					</div>
 				</ContainerNarrow>
 			</section>
-			<section className="bg-accent text-primary pt-12">
-				<ContainerNarrow className="items-center justify-center">
-					<h2 className="flex items-center gap-4 text-primary">
-						<FontAwesomeIcon icon={faPeopleGroup} className="flex-shrink-0 size-12"/>
-						<span>Community Involvement</span>
-					</h2>
-					<ul className="flex flex-col gap-1">
-						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
-							<span>Member of the Columbus &amp; Dayton, OH WordPress meetups</span>
-						</li>
-						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
-							<span>WordCamp Columbus Volunteer</span>
-						</li>
-						<li className="flex gap-2">
-							<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
-							<span>Organized my own WordPress meetup in Marysville</span>
-						</li>
-					</ul>
-				</ContainerNarrow>
-			</section>
-			<section
-				className="text-neutral pt-28 pb-12 bg-linear-[2deg,var(--color-secondary)_70%,var(--color-accent)_calc(70%+2px)]">
-				<ContainerNarrow>
-					<h2 className="flex items-center gap-4 text-neutral">
-						<FontAwesomeIcon icon={faGraduationCap} className="flex-shrink-0 size-12"/>
-						<span>Education</span>
-					</h2>
-					<p>I hold a B.A. in chemistry from the Ohio State University and completed two years of study at Franklin University in web development, but am mostly self-taught. I continue to keep abreast of new tech stacks, tools, and development tips via Udemy, Laracasts, and other online learning resources.</p>
-				</ContainerNarrow>
-			</section>
-			<section className="py-12 bg-neutral">
+			<section className="bg-accent text-primary pt-12 pb-6">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4">
 						<FontAwesomeIcon icon={faTachographDigital} className="flex-shrink-0 size-12"/>
@@ -262,6 +242,40 @@ export default async function ResumePage ({ params }) {
 						</Link>
 					</Button>
 				</ContainerNarrow>
+			</section>
+			<section
+				className="text-primary pt-28 sm:pt-24 sm:pb-12 bg-linear-[2deg,var(--color-neutral)_84%,var(--color-accent)_calc(84%+2px)]">
+				<ContainerWide>
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
+						<div className="flex flex-col">
+							<h2 className="flex items-center gap-4">
+								<FontAwesomeIcon icon={faPeopleGroup} className="flex-shrink-0 size-12"/>
+								<span>Community Involvement</span>
+							</h2>
+							<ul className="flex flex-col gap-1">
+								<li className="flex items-center gap-2">
+									<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
+									<span>Member of the Columbus &amp; Dayton, OH WordPress meetups</span>
+								</li>
+								<li className="flex items-center gap-2">
+									<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
+									<span>WordCamp Columbus Volunteer</span>
+								</li>
+								<li className="flex items-center gap-2">
+									<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
+									<span>Organized my own WordPress meetup in Marysville</span>
+								</li>
+							</ul>
+						</div>
+						<div className="flex flex-col">
+							<h2 className="flex items-center gap-4">
+								<FontAwesomeIcon icon={faGraduationCap} className="flex-shrink-0 size-12"/>
+								<span>Education</span>
+							</h2>
+							<p>I hold a B.A. in chemistry from the Ohio State University and completed two years of study at Franklin University in web development, but am mostly self-taught. I continue to keep abreast of new tech stacks, tools, and development tips via Udemy, Laracasts, and other online learning resources.</p>
+						</div>
+					</div>
+				</ContainerWide>
 			</section>
 		</>
 	);
