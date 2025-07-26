@@ -244,7 +244,7 @@ export default async function ResumePage ({ params }) {
 				</ContainerNarrow>
 			</section>
 			<section
-				className="text-primary pt-28 sm:pt-24 pb-12 bg-linear-[2deg,var(--color-neutral)_84%,var(--color-accent)_calc(84%+2px)]">
+				className="text-primary pt-28 sm:pt-24 pb-12 bg-linear-[2deg,var(--color-neutral)_90%,var(--color-accent)_calc(90%+2px)] sm:bg-linear-[2deg,var(--color-neutral)_83%,var(--color-accent)_calc(83%+2px)]">
 				<ContainerWide>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
 						<div className="flex flex-col">
