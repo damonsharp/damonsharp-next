@@ -35,7 +35,7 @@ export default async function Project ({ params }) {
 	} = projectMetadata;
 
 	return (
-		<article className={`project-${id} py-12`}>
+		<article className={`project-${id} py-10`}>
 			<ContainerNarrow>
 				<section className="flex flex-col mb-8">
 					<h1>{title}</h1>

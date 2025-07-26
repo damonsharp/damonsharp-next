@@ -13,7 +13,7 @@ const Recommendations = ({ recommendations }) => {
 
 	return (
 		<section className="bg-neutral">
-			<ContainerWide className="py-12 2xl:py-24">
+			<ContainerWide className="py-10 2xl:py-24">
 				<h2 className="flex items-center text-center justify-center">
 					<FontAwesomeIcon className="size-10" icon={faThumbsUp}/>
 					<span>Recommendations</span>

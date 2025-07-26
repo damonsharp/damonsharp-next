@@ -35,7 +35,7 @@ export default async function Home () {
 	return (
 		<>
 			<section
-				className="text-primary pt-16 pb-36 bg-linear-[180deg,var(--color-neutral)_90%,var(--color-accent)_calc(70%+2px)] -mt-8">
+				className="text-primary pt-10 pb-36 bg-linear-[180deg,var(--color-neutral)_90%,var(--color-accent)_calc(70%+2px)] -mt-6">
 				<ContainerNarrow className="pb-10">
 					<h1 className="">{title}</h1>
 					<EditorContent>{content}</EditorContent>

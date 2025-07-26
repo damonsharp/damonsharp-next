@@ -36,7 +36,7 @@ export default async function ResumePage ({ params }) {
 
 	return (
 		<>
-			<section className="bg-secondary text-neutral -mt-6 py-12">
+			<section className="bg-secondary text-neutral -mt-6 py-10">
 				<ContainerNarrow className="flex flex-col gap-8 sm:gap-2">
 					<div className="flex flex-col gap-2 sm:gap-4 sm:flex-row sm:items-center justify-between">
 						<h1 className="text-neutral w-full">{title}</h1>
