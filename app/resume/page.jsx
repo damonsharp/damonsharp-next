@@ -252,7 +252,7 @@ export default async function ResumePage ({ params }) {
 								<FontAwesomeIcon icon={faPeopleGroup} className="flex-shrink-0 size-12"/>
 								<span>Community Involvement</span>
 							</h2>
-							<ul className="flex flex-col gap-1">
+							<ul className="flex flex-col gap-2">
 								<li className="flex items-center gap-2">
 									<FontAwesomeIcon icon={faChevronCircleRight} className="size-5"/>
 									<span>Member of the Columbus &amp; Dayton, OH WordPress meetups</span>
