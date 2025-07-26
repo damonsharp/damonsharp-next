@@ -23,6 +23,19 @@ export async function generateMetadata () {
 			default: "Damon Sharp"
 		},
 		description: "Senior Web Engineer from Ohio, USA specializing in PHP, React/Next.js, WordPress and Laravel web solutions.",
+		robots: {
+			index: true,
+			follow: true,
+			nocache: false,
+			googleBot: {
+				index: true,
+				follow: true,
+				noimageindex: false,
+				"max-video-preview": -1,
+				"max-image-preview": "large",
+				"max-snippet": -1,
+			},
+		}
 	};
 }
 
@@ -34,11 +47,11 @@ export default function RootLayout ({
 		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}>
 		<body className="bg-neutral text-primary min-h-screen">
 		<main className="flex flex-col h-screen">
-			<Header params={params}/>
-			<div className="mb-auto relative">
+			<Header className="flex-none" params={params}/>
+			<div className="flex-auto relative">
 				{children}
 			</div>
-			<Footer/>
+			<Footer className="flex-none"/>
 		</main>
 		</body>
 		</html>

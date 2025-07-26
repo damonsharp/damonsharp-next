@@ -44,7 +44,7 @@ export default async function ResumePage ({ params }) {
 							asChild
 							className="bg-accent text-primary hover:bg-neutral hover:text-primary px-5 py-4 rounded-sm w-fit"
 						>
-							<Link href={`/resume.pdf`} download={true} className="flex items-center">
+							<Link href={`/DamonSharpResume.pdf`} download={true} className="flex items-center">
 								<span>Download PDF</span>
 								<FontAwesomeIcon icon={faArrowAltCircleDown}/>
 							</Link>
