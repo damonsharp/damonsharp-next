@@ -12,7 +12,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "dws.230studios.test",
+				hostname: "damonsharp-wp.test",
 				pathname: "/wp-content/uploads/**",
 				port: "",
 				search: ""
