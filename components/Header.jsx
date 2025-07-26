@@ -15,8 +15,8 @@ export default async function Header () {
 
 	return (
 		<header
-			className="bg-primary px-4 pt-2 sm:px-0 relative z-1">
-			<div className="grid items-center pb-6 gap-2">
+			className="bg-primary px-4 py-4 sm:pb-6 sm:px-0 relative z-1">
+			<div className="grid items-center gap-2">
 				<div
 					className="grid grid-cols-4 grid-rows-2 gap-x-3 gap-y-0 items-center text-center justify-around sm:grid-cols-none sm:grid-rows-1 sm:justify-center sm:items-center text-2xl font-bold pt-1 max-w-max m-auto">
 					<span
