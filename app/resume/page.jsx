@@ -146,7 +146,7 @@ export default async function ResumePage ({ params }) {
 			<section className="bg-primary text-neutral pt-8 pb-18 xl:pt-18">
 				<ContainerNarrow>
 					<h2 className="flex items-center gap-4 text-neutral pb-8">
-						<FontAwesomeIcon icon={faUserTie} className="flex-shrink-0 size-12"/>
+						<FontAwesomeIcon icon={faUserTie} className="flex-shrink-0 size-10"/>
 						<span>Professional Experience</span>
 					</h2>
 					<div className="flex flex-col gap-2">
