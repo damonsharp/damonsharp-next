@@ -34,7 +34,7 @@ export default async function ProjectsPage ({ params }) {
 					<EditorContent>{content}</EditorContent>
 				</ContainerNarrow>
 			</section>
-			<section className="bg-linear-[3deg,var(--color-accent)_85%,var(--color-neutral)_calc(70%+2px)] ">;
+			<section className="bg-linear-[3deg,var(--color-accent)_85%,var(--color-neutral)_calc(70%+2px)] ">
 				<ContainerWide>
 					<Projects projects={data?.projects?.nodes}/>
 				</ContainerWide>
