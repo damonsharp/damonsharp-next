@@ -13,16 +13,16 @@ const ResumeHighlightsSkills = ({ highlightsSkills }) => {
 					{highlightsSkills.column.map((column, i) => (
 						<div className="flex flex-col" key={column.title}>
 							<h2 className="flex gap-3 items-center">
-								<FontAwesomeIcon icon={icon[ column.icon ]} className="flex-shrink-0 size-12"/>
+								<FontAwesomeIcon icon={icon[ column.icon ]} className="shrink-0 size-12!"/>
 								<span>{column.title}</span>
 							</h2>
 							<Hr/>
 							<ul className={`flex flex-col ${0 === i ? "gap-8" : "gap-2"}`}>
 								{column.skill.map(item => (
-									<li className="flex items-center" key={item.content}>
+									<li className="flex gap-3 items-center" key={item.content}>
 										<FontAwesomeIcon
 											icon={item.icon ? icon[ item.icon ] : icon.faChevronCircleRight}
-											className="flex-shrink-0 size-5"/>
+											className="shrink-0 size-4"/>
 										<span>{item.content}</span>
 									</li>
 								))}

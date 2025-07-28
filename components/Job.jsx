@@ -12,10 +12,10 @@ const Job = ({ job }) => {
 			</p>
 			<ul className="flex flex-col gap-4 list-disc">
 				{job.responsibilities.map(responsibility => (
-					<li className="flex items-center" key={responsibility.task}>
+					<li className="flex items-center gap-3" key={responsibility.task}>
 						<FontAwesomeIcon
 							icon={responsibility.icon ? icon[ responsibility.icon ] : icon.faChevronCircleRight}
-							className="flex-shrink-0 size-5"/>
+							className="shrink-0 size-4"/>
 						<span>{responsibility.task}</span>
 					</li>
 				))}

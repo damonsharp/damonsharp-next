@@ -48,7 +48,7 @@ export default async function Project ({ params }) {
 							   href={liveUrl}
 							   target="_blank" rel="noopener">
 								<span>Visit Live Site</span>
-								<FontAwesomeIcon className="flex-shrink-0 size-3" icon={faExternalLink}/>
+								<FontAwesomeIcon className="shrink-0 size-3" icon={faExternalLink}/>
 							</a>
 						)}
 					</div>
@@ -71,7 +71,7 @@ export default async function Project ({ params }) {
 						</div>
 					)}
 					<Link className="flex items-center gap-2 hover:underline" href="/projects">
-						<FontAwesomeIcon className="flex-shrink-0 size-4" icon={faChevronCircleLeft}/>
+						<FontAwesomeIcon className="shrink-0 size-4" icon={faChevronCircleLeft}/>
 						<span>Back to Projects</span>
 					</Link>
 				</section>

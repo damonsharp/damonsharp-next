@@ -18,7 +18,7 @@ const ResumeProjects = ({ projects }) => {
 		<section className="bg-accent text-primary pt-12 pb-6">
 			<ContainerNarrow>
 				<h2 className="flex items-center gap-4">
-					<FontAwesomeIcon icon={icon[ sectionTitleIcon ]} className="flex-shrink-0 size-12"/>
+					<FontAwesomeIcon icon={icon[ sectionTitleIcon ]} className="shrink-0 size-12"/>
 					<span>{sectionTitle}</span>
 				</h2>
 				{escHtml(content)}

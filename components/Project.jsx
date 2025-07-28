@@ -39,7 +39,7 @@ const Project = ({
 					        className="bg-primary text-neutral hover:bg-secondary px-5 py-4 rounded-sm w-fit">
 						<Link href={`/projects/${slug}`} className="flex items-center">
 							<span>View Project Details</span>
-							<FontAwesomeIcon icon={faArrowAltCircleRight} className="size-4"/>
+							<FontAwesomeIcon icon={faArrowAltCircleRight} className="size-4 shrink-0"/>
 						</Link>
 					</Button>
 				</div>

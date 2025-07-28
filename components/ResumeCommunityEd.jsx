@@ -14,16 +14,16 @@ const ResumeCommunityEd = ({ communityEducation }) => {
 					{column.map((item, i) => (
 						<div key={i} className="flex flex-col">
 							<h2 className="flex items-center gap-4">
-								<FontAwesomeIcon icon={icon[ item.icon ]} className="flex-shrink-0 size-12"/>
+								<FontAwesomeIcon icon={icon[ item.icon ]} className="shrink-0 size-12"/>
 								<span>{item.title}</span>
 							</h2>
 							{"list" === item.contentType ? (
-								<ul className="flex flex-col gap-2">
+								<ul className="flex flex-col gap-3">
 									{item.skill.map(entry => (
 										<li key={entry.content} className="flex items-center gap-2">
 											<FontAwesomeIcon
 												icon={entry.icon ? icon[ entry.icon ] : icon.faChevronCircleRight}
-												className="size-5"/>
+												className="size-4 shrink-0"/>
 											<span>{entry.content}</span>
 										</li>
 									))}

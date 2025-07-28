@@ -13,7 +13,7 @@ const ProfessionalExperience = ({ employment }) => {
 		<section className="bg-primary text-neutral pt-8 pb-18 xl:pt-18">
 			<ContainerNarrow>
 				<h2 className="flex items-center gap-4 text-neutral pb-8">
-					<FontAwesomeIcon icon={icon[ employment.icon ]} className="flex-shrink-0 size-10"/>
+					<FontAwesomeIcon icon={icon[ employment.icon ]} className="shrink-0 size-10"/>
 					<span>{sectionTitle}</span>
 				</h2>
 				{jobEntry.map((job, i) => (
