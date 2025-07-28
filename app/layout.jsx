@@ -46,7 +46,7 @@ export default function RootLayout ({
 }) {
 	return (
 		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}>
-		<GoogleTagManager gtmId="G-Q3VZDBM43F"/>
+		<GoogleTagManager gtmId="GTM-NR3CSFW5"/>
 		<body className="bg-neutral text-primary min-h-screen">
 		<main className="flex flex-col h-screen">
 			<Header className="flex-none" params={params}/>
