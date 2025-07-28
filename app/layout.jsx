@@ -5,6 +5,7 @@ import {
 import "@/assets/styles/global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout ({
 }) {
 	return (
 		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}>
+		<GoogleTagManager gtmId="G-Q3VZDBM43F"/>
 		<body className="bg-neutral text-primary min-h-screen">
 		<main className="flex flex-col h-screen">
 			<Header className="flex-none" params={params}/>
