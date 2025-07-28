@@ -1,11 +1,14 @@
 import getProject from "@/lib/queries/getProject";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@/components/ui/button";
+import {
+	faChevronCircleLeft,
+	faExternalLink
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContainerNarrow from "@/components/ContainerNarrow";
 import EditorContent from "@/components/EditorContent";
 import React from "react";
 import GalleryImages from "@/components/GalleryImages";
+import Link from "next/link";
 
 export async function generateMetadata ({ params }) {
 	const { slug } = await params;
@@ -38,7 +41,16 @@ export default async function Project ({ params }) {
 		<article className={`project-${id} py-10`}>
 			<ContainerNarrow>
 				<section className="flex flex-col mb-8">
-					<h1>{title}</h1>
+					<div className="flex items-center justify-between">
+						<h1 className="mb-0">{title}</h1>
+						{liveUrl && (
+							<a className="text-secondary px-3 py-1 border border-neutral hover:border-secondary rounded hover:text-primary"
+							   href={liveUrl}
+							   target="_blank" rel="noopener">
+								Visit Live Site <FontAwesomeIcon icon={faExternalLink}/>
+							</a>
+						)}
+					</div>
 					{content && (
 						<EditorContent>{content}</EditorContent>
 					)}
@@ -57,14 +69,10 @@ export default async function Project ({ params }) {
 							<p>{techStack}</p>
 						</div>
 					)}
-					{liveUrl && (
-						<Button asChild
-						        className="max-w-max bg-primary text-neutral hover:bg-accent hover:text-primary px-5 py-4 rounded mt-5 cursor-pointer">
-							<a href={liveUrl} target="_blank" rel="noopener">
-								Visit Live Site <FontAwesomeIcon icon={faExternalLink}/>
-							</a>
-						</Button>
-					)}
+					<Link className="flex items-center gap-2 hover:underline" href="/projects">
+						<FontAwesomeIcon className="flex-shrink-0 size-4" icon={faChevronCircleLeft}/>
+						<span>Back to Projects</span>
+					</Link>
 				</section>
 			</ContainerNarrow>
 		</article>

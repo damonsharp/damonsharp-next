@@ -1,5 +1,11 @@
-export default function sitemap () {
-	return [
+import { query } from "@/lib/apolloClient";
+import PROJECTS_QUERY from "@/lib/queries/getProjects";
+
+export default async function sitemap () {
+	const { data } = await query({
+		query: PROJECTS_QUERY
+	});
+	const items = [
 		{
 			url: "https://www.damonsharp.me",
 			lastModified: new Date(),
@@ -25,4 +31,16 @@ export default function sitemap () {
 			priority: 0.1,
 		},
 	];
+
+	data.projects.nodes.map(project => {
+		const projectUrl = `https://www.damonsharp.me/projects/${project.uri.replace("/project/", "")}`;
+		items.push({
+			url: projectUrl,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.7,
+		});
+	});
+
+	return items;
 }
