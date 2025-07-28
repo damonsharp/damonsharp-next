@@ -44,10 +44,11 @@ export default async function Project ({ params }) {
 					<div className="flex items-center justify-between">
 						<h1 className="mb-0">{title}</h1>
 						{liveUrl && (
-							<a className="text-secondary px-3 py-1 border border-neutral hover:border-secondary rounded hover:text-primary"
+							<a className="flex items-center gap-2 text-secondary px-3 py-1 border border-neutral hover:border-secondary rounded hover:text-primary"
 							   href={liveUrl}
 							   target="_blank" rel="noopener">
-								Visit Live Site <FontAwesomeIcon icon={faExternalLink}/>
+								<span>Visit Live Site</span>
+								<FontAwesomeIcon className="flex-shrink-0 size-3" icon={faExternalLink}/>
 							</a>
 						)}
 					</div>
