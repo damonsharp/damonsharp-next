@@ -1,11 +1,12 @@
 "use server";
 
-import { contactFormSchema } from "@/lib/validators";
-import { z } from "zod";
-import { Resend } from "resend";
 import ContactToAdmin from "@/emails/ContactToAdmin";
+import ContactToSender from "@/emails/ContactToSender";
+import { contactFormSchema } from "@/lib/validators";
+import { Resend } from "resend";
+import { z } from "zod";
 
-export async function sendEmail (prevState, formData) {
+export async function sendEmail(prevState, formData) {
 	const fullName = formData.get("fullName");
 	const email = formData.get("email");
 	const message = formData.get("message");
@@ -13,10 +14,10 @@ export async function sendEmail (prevState, formData) {
 	const validatedFields = contactFormSchema.safeParse({
 		fullName,
 		email,
-		message
+		message,
 	});
 
-	if (! validatedFields.success) {
+	if (!validatedFields.success) {
 		const errors = z.flattenError(validatedFields.error);
 
 		return {
@@ -24,42 +25,50 @@ export async function sendEmail (prevState, formData) {
 			errors,
 			fullName,
 			email,
-			message
+			message,
 		};
 	}
 
 	try {
-		const {
-			data,
-			error: resendError
-		} = await resend.emails.send({
+		// Send message to myself.
+		const { data, error: resendError } = await resend.emails.send({
 			from: process.env.RESEND_FROM,
 			to: [process.env.RESEND_TO],
 			subject: "Contact from personal website",
 			react: ContactToAdmin({
 				fullName,
-				message
-			})
+				message,
+			}),
 		});
 
 		if (resendError) {
 			return {
 				...prevState,
 				errors: resendError,
-				formMessage: `Sorry, ${fullName} but we couldn't send your email at this time.`
+				formMessage: `Sorry, ${fullName} but we couldn't send your email at this time.`,
 			};
 		}
+
+		// Send response to sender.
+		const { senderData, error: senderResendError } = await resend.emails.send({
+			from: process.env.RESEND_FROM,
+			to: email,
+			subject: "Thanks for reaching out!",
+			react: ContactToSender({
+				fullName,
+				message,
+			}),
+		});
 
 		return {
 			...prevState,
 			errors: {},
-			formMessage: `Message sent! Thanks, ${fullName} for reaching out. I'll be in touch soon.`
+			formMessage: `Message sent! Thanks, ${fullName} for reaching out. I'll be in touch soon.`,
 		};
 	} catch (e) {
 		return {
 			...prevState,
-			formMessage: e.message
+			formMessage: e.message,
 		};
 	}
-
-};
+}
