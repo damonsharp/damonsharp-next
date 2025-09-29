@@ -1,12 +1,12 @@
 "use server";
 
-import ContactToAdmin from "@/emails/ContactToAdmin";
-import ContactToSender from "@/emails/ContactToSender";
+import ContactToAdmin from "@/components/emails/ContactToAdmin";
+import ContactToSender from "@/components/emails/ContactToSender";
 import { contactFormSchema } from "@/lib/validators";
 import { Resend } from "resend";
 import { z } from "zod";
 
-export async function sendEmail(prevState, formData) {
+export async function sendEmail (prevState, formData) {
 	const fullName = formData.get("fullName");
 	const email = formData.get("email");
 	const message = formData.get("message");
@@ -17,7 +17,7 @@ export async function sendEmail(prevState, formData) {
 		message,
 	});
 
-	if (!validatedFields.success) {
+	if (! validatedFields.success) {
 		const errors = z.flattenError(validatedFields.error);
 
 		return {
@@ -31,12 +31,17 @@ export async function sendEmail(prevState, formData) {
 
 	try {
 		// Send message to myself.
-		const { data, error: resendError } = await resend.emails.send({
+		const {
+			data,
+			error: resendError
+		} = await resend.emails.send({
 			from: process.env.RESEND_FROM,
 			to: [process.env.RESEND_TO],
+			replyTo: email,
 			subject: "Contact from personal website",
 			react: ContactToAdmin({
 				fullName,
+				email,
 				message,
 			}),
 		});
@@ -50,7 +55,10 @@ export async function sendEmail(prevState, formData) {
 		}
 
 		// Send response to sender.
-		const { senderData, error: senderResendError } = await resend.emails.send({
+		const {
+			senderData,
+			error: senderResendError
+		} = await resend.emails.send({
 			from: process.env.RESEND_FROM,
 			to: email,
 			subject: "Thanks for reaching out!",

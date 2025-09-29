@@ -4,10 +4,7 @@ import { sendEmail } from "@/actions/sendEmail";
 import { useActionState } from "react";
 import { Button } from "@/components/ui/button";
 import { contactFormInitialState } from "@/lib/validators";
-import {
-	faArrowAltCircleRight,
-	faCheckSquare
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleRight, faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactForm = ({ className }) => {
@@ -16,17 +13,21 @@ const ContactForm = ({ className }) => {
 	return (
 		<>
 			{formState.formMessage ? (
-				<div className="flex items-center p-6 border border-4 border-success rounded text-success text-lg">
-					<FontAwesomeIcon icon={faCheckSquare} className="text-4xl"/>
+				<div className="flex items-center p-6 border-4 border-success rounded text-success text-lg">
+					<FontAwesomeIcon icon={faCheckSquare} className="text-4xl" />
 					{formState.formMessage}
 				</div>
 			) : (
 				<form className={className} action={formAction}>
 					<div className="grid grid-cols-1 md:grid-cols-2 justify-center">
 						<div className="">
-							<label className="block" htmlFor="fullName">Full Name</label>
+							<label className="block" htmlFor="fullName">
+								Full Name
+							</label>
 							{formState.errors.fieldErrors?.fullName && (
-								<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.fullName[ 0 ]}</p>
+								<p className="text-destructive my-2 text-sm">
+									{formState.errors.fieldErrors.fullName[0]}
+								</p>
 							)}
 							<input
 								className="p-3 w-full rounded-xs border border-accent"
@@ -40,9 +41,11 @@ const ContactForm = ({ className }) => {
 							/>
 						</div>
 						<div className="">
-							<label className="block" htmlFor="email">Email Address</label>
+							<label className="block" htmlFor="email">
+								Email Address
+							</label>
 							{formState.errors.fieldErrors?.email && (
-								<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.email[ 0 ]}</p>
+								<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.email[0]}</p>
 							)}
 							<input
 								className="p-3 w-full rounded-xs border border-accent"
@@ -57,9 +60,11 @@ const ContactForm = ({ className }) => {
 						</div>
 					</div>
 					<div>
-						<label className="mt-5 block" htmlFor="message">Message</label>
+						<label className="mt-5 block" htmlFor="message">
+							Message
+						</label>
 						{formState.errors.fieldErrors?.message && (
-							<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.message[ 0 ]}</p>
+							<p className="text-destructive my-2 text-sm">{formState.errors.fieldErrors.message[0]}</p>
 						)}
 						<textarea
 							className="p-3 mt-1 rounded-xs w-full h-64 border border-accent"
@@ -74,12 +79,11 @@ const ContactForm = ({ className }) => {
 						className="bg-primary text-neutral hover:bg-accent hover:text-primary px-5 py-4 rounded mt-5 cursor-pointer"
 						disabled={isPending}
 					>
-						{isPending ? "Sending" : "Send Message"} <FontAwesomeIcon icon={faArrowAltCircleRight}/>
+						{isPending ? "Sending" : "Send Message"} <FontAwesomeIcon icon={faArrowAltCircleRight} />
 					</Button>
 				</form>
 			)}
 		</>
-
 	);
 };
 

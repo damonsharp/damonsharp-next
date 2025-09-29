@@ -1,15 +1,28 @@
-import { Body, Container, Head, Html, Row, Section, Tailwind, Text } from "@react-email/components";
+import {
+	Body,
+	Container,
+	Head,
+	Html,
+	Row,
+	Section,
+	Tailwind,
+	Text
+} from "@react-email/components";
 
-const ContactToAdmin = ({ fullName = "Damon", message = "testing" }) => {
+const ContactToAdmin = ({
+	fullName,
+	email,
+	message
+}) => {
 	return (
 		<Html>
-			<Head />
+			<Head/>
 			<Tailwind>
 				<Body className="p-12">
 					<Container>
 						<Section>
 							<Row>
-								<Text>The following message was received from {fullName}...</Text>
+								<Text>The following message was received from {fullName} ({email})...</Text>
 							</Row>
 							<Row>
 								<Text>{message}</Text>
