@@ -10,6 +10,7 @@ export async function sendEmail (prevState, formData) {
 	const fullName = formData.get("fullName");
 	const email = formData.get("email");
 	const message = formData.get("message");
+	const company = formData.get("company"); // honeypot field - should NOT be filled in by users.
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const validatedFields = contactFormSchema.safeParse({
 		fullName,
@@ -25,54 +26,56 @@ export async function sendEmail (prevState, formData) {
 			errors,
 			fullName,
 			email,
-			message,
+			message
 		};
 	}
 
 	try {
-		// Send message to myself.
-		const {
-			data,
-			error: resendError
-		} = await resend.emails.send({
-			from: process.env.RESEND_FROM,
-			to: [process.env.RESEND_TO],
-			replyTo: email,
-			subject: "Contact from personal website",
-			react: ContactToAdmin({
-				fullName,
-				email,
-				message,
-			}),
-		});
+		if (! company) {
+			// Send message to myself.
+			const {
+				data,
+				error: resendError
+			} = await resend.emails.send({
+				from: process.env.RESEND_FROM,
+				to: [process.env.RESEND_TO],
+				replyTo: email,
+				subject: "Contact from personal website",
+				react: ContactToAdmin({
+					fullName,
+					email,
+					message,
+				}),
+			});
 
-		if (resendError) {
+			if (resendError) {
+				return {
+					...prevState,
+					errors: resendError,
+					formMessage: `Sorry, ${fullName} but we couldn't send your email at this time.`,
+				};
+			}
+
+			// Send response to sender.
+			const {
+				senderData,
+				error: senderResendError
+			} = await resend.emails.send({
+				from: process.env.RESEND_FROM,
+				to: email,
+				subject: "Thanks for reaching out!",
+				react: ContactToSender({
+					fullName,
+					message,
+				}),
+			});
+
 			return {
 				...prevState,
-				errors: resendError,
-				formMessage: `Sorry, ${fullName} but we couldn't send your email at this time.`,
+				errors: {},
+				formMessage: `Message sent! Thanks, ${fullName} for reaching out. I'll be in touch soon.`,
 			};
 		}
-
-		// Send response to sender.
-		const {
-			senderData,
-			error: senderResendError
-		} = await resend.emails.send({
-			from: process.env.RESEND_FROM,
-			to: email,
-			subject: "Thanks for reaching out!",
-			react: ContactToSender({
-				fullName,
-				message,
-			}),
-		});
-
-		return {
-			...prevState,
-			errors: {},
-			formMessage: `Message sent! Thanks, ${fullName} for reaching out. I'll be in touch soon.`,
-		};
 	} catch (e) {
 		return {
 			...prevState,
