@@ -92,7 +92,7 @@ const ContactForm = ({ className }) => {
 						className="bg-primary text-neutral hover:bg-accent hover:text-primary px-5 py-4 rounded mt-5 cursor-pointer"
 						disabled={isPending}
 					>
-						{isPending ? "Sending" : "Send Message"} <FontAwesomeIcon icon={faArrowAltCircleRight}/>
+						{isPending ? "Sending..." : "Send Message"} <FontAwesomeIcon icon={faArrowAltCircleRight}/>
 					</Button>
 				</form>
 			)}
