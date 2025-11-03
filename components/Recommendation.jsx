@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { cn } from "@/lib/utils";
-import EditorContent from "@/components/EditorContent";
+import ReadMore from "@/components/ReadMore";
 
 const Recommendation = ({
 	recommendation,
@@ -20,7 +20,7 @@ const Recommendation = ({
 			<blockquote className="flex flex-col sm:flex-row">
 				<FontAwesomeIcon className="self-center sm:self-start shrink-0 size-14!"
 				                 icon={faQuoteLeft}/>
-				<EditorContent className="py-6">{content}</EditorContent>
+				<ReadMore className="py-6" text={content}/>
 			</blockquote>
 			<p className="text-center font-bold">&#8764; {person} &ndash; {title}</p>
 		</div>
