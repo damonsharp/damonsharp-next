@@ -26,7 +26,7 @@ const ReadMore = ({
 				onClick={toggleReadMore}
 				className="transition-all text-sm italic text-secondary hover:text-primary bg-none cursor-pointer underline hover:no-underline"
 			>
-				{isExpanded ? "< Show less" : "Read more >"}
+				{isExpanded ? "< Show less" : "Show more >"}
 			</button>
 		</div>
 	);
