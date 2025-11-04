@@ -16,7 +16,7 @@ const Recommendation = ({
 
 	return (
 		<div
-			className={`${cn("flex flex-col gap-10 justify-between rounded-md border-2 border-primary p-12", className)}`}>
+			className={`${cn("flex flex-col gap-10 justify-between rounded-md border shadow shadow-lg border-secondary p-12", className)}`}>
 			<blockquote className="flex flex-col sm:flex-row">
 				<FontAwesomeIcon className="self-center sm:self-start shrink-0 size-14!"
 				                 icon={faQuoteLeft}/>
