@@ -7,7 +7,7 @@ import EditorContent from "@/components/EditorContent";
 
 const Recommendations = ({ recommendations }) => {
 	const {
-		recommendation,
+		recommendation: recommendationItems,
 		intro
 	} = recommendations;
 
@@ -19,12 +19,12 @@ const Recommendations = ({ recommendations }) => {
 					<span>Recommendations</span>
 				</h2>
 				<EditorContent className="text-center mb-8 flex gap-2">{intro}</EditorContent>
-				<div className="grid grid-cols-1 xl:grid-cols-2">
-					{recommendation.map((item, i) => (
+				<div className="grid grid-cols-1 xl:grid-cols-2 h-min">
+					{recommendationItems.map((item, i) => (
 						<Recommendation
 							key={item.person}
 							recommendation={item}
-							className={recommendation.length === i + 1 ? "xl:col-span-2" : ""}
+							className={recommendationItems.length === i + 1 ? "xl:col-span-2" : ""}
 						/>
 					))}
 				</div>
