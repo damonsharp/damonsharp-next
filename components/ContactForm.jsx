@@ -78,14 +78,21 @@ const ContactForm = ({ className }) => {
 							required
 						/>
 					</div>
-					<div className="hidden">
+					<div>
+						<label className="mt-5 block" htmlFor="juststop">
+							If you had ten items and four were taken away, how many would you have left?
+						</label>
+						{formState?.errors?.fieldErrors?.juststop && (
+							<p className="text-destructive my-2 text-sm">{formState?.errors.fieldErrors.juststop[ 0 ]}</p>
+						)}
 						<input
-							type="hidden"
-							name="company"
-							defaultValue=""
+							className="p-3 mt-1 rounded-xs w-full border border-accent"
+							id="juststop"
+							type="text"
+							name="juststop"
+							defaultValue={formState?.juststop}
 							max={80}
-							tabIndex="-1"
-							autoComplete="one-time-code"
+							required
 						/>
 					</div>
 					<Button

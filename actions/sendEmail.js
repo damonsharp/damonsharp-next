@@ -10,12 +10,14 @@ export async function sendEmail (prevState, formData) {
 	const fullName = formData.get("fullName");
 	const email = formData.get("email");
 	const message = formData.get("message");
+	const juststop = formData.get("juststop");
 	const company = formData.get("company"); // honeypot field - should NOT be filled in by users.
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const validatedFields = contactFormSchema.safeParse({
 		fullName,
 		email,
 		message,
+		juststop
 	});
 
 	if (! validatedFields.success) {
@@ -26,7 +28,8 @@ export async function sendEmail (prevState, formData) {
 			errors,
 			fullName,
 			email,
-			message
+			message,
+			juststop
 		};
 	}
 
