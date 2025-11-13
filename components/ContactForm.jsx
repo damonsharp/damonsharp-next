@@ -86,7 +86,7 @@ const ContactForm = ({ className }) => {
 							<p className="text-destructive my-2 text-sm">{formState?.errors.fieldErrors.juststop[ 0 ]}</p>
 						)}
 						<input
-							className="p-3 mt-1 rounded-xs w-full border border-accent"
+							className="p-3 mt-1 rounded-xs w-full border border-accent lowercase"
 							id="juststop"
 							type="text"
 							name="juststop"
