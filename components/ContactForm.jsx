@@ -90,7 +90,7 @@ const ContactForm = ({ className }) => {
 							id="juststop"
 							type="text"
 							name="juststop"
-							defaultValue={formState?.juststop}
+							defaultValue=""
 							max={80}
 							required
 						/>
