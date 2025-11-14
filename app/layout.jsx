@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 export async function generateMetadata () {
 	return {
 		title: {
-			template: "%s | Damon Sharp",
-			default: "Damon Sharp"
+			template: "%s | Damon Sharp - Web Engineer",
+			default: "Damon Sharp - Web Engineer"
 		},
 		description: "Senior Web Engineer from Ohio, USA specializing in PHP, React/Next.js, WordPress and Laravel web solutions.",
 		robots: {

@@ -14,11 +14,11 @@ import ContainerNarrow from "@/components/ContainerNarrow";
 import ContainerWide from "@/components/ContainerWide";
 import EditorContent from "@/components/EditorContent";
 
-export async function generateMetadata () {
-	return {
-		title: "Home"
-	};
-}
+// export async function generateMetadata () {
+// 	return {
+// 		title: "Home"
+// 	};
+// }
 
 export default async function Home () {
 
