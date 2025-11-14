@@ -2,12 +2,14 @@
 
 import React, { useState } from "react";
 import EditorContent from "@/components/EditorContent";
+import { escHtml } from "@/lib/utils";
 
 const ReadMore = ({
 	text,
 	maxLength = 240
 }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
+	const readMoreText = isExpanded ? "Read less &#8593;" : "Read more &#8595;";
 
 	if (text.length <= maxLength) {
 		return (
@@ -20,13 +22,14 @@ const ReadMore = ({
 	};
 
 	return (
-		<div className={"flex flex-col gap-4 items-start"}>
-			<EditorContent>{isExpanded ? text : text.substring(0, maxLength).trim() + "... "}</EditorContent>
+		<div className="flex flex-col gap-4 items-start">
+			<EditorContent>
+				{isExpanded ? text : text.substring(0, maxLength).trim() + " ... "}</EditorContent>
 			<button
 				onClick={toggleReadMore}
-				className="transition-all text-sm italic text-secondary hover:text-primary bg-none cursor-pointer underline hover:no-underline"
+				className="transition-all text-xs text-secondary hover:text-primary bg-none cursor-pointer no-underline hover:underline"
 			>
-				{isExpanded ? "< Show less" : "Show more >"}
+				{escHtml(readMoreText)}
 			</button>
 		</div>
 	);

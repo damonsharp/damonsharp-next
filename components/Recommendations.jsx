@@ -19,12 +19,12 @@ const Recommendations = ({ recommendations }) => {
 					<span>Recommendations</span>
 				</h2>
 				<EditorContent className="text-center mb-8 flex gap-2">{intro}</EditorContent>
-				<div className="grid grid-cols-1 xl:grid-cols-2 h-min">
+				<div className="flex flex-col gap-6 h-min">
 					{recommendationItems.map((item, i) => (
 						<Recommendation
+							className={i % 2 === 0 ? "place-self-start" : "place-self-end"}
 							key={item.person}
 							recommendation={item}
-							className={recommendationItems.length === i + 1 ? "xl:col-span-2" : ""}
 						/>
 					))}
 				</div>
