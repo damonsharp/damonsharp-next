@@ -9,7 +9,7 @@ const SiteLogo = ({
 	prioritize = false
 }) => {
 	return (
-		<Link className={className} href="/">
+		<Link className={className} href="/" aria-label="Link to the home page">
 			<Image
 				src={logo}
 				alt="Damon Sharp Logo"

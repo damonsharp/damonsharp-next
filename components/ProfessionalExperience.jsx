@@ -19,7 +19,7 @@ const ProfessionalExperience = ({ employment }) => {
 				{jobEntry.map((job, i) => (
 					<div className="flex flex-col" key={i}>
 						{i !== 0 && (
-							<hr className="border border-accent"/>
+							<hr className="border border-accent/10"/>
 						)}
 						<Job job={job}/>
 					</div>

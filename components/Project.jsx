@@ -25,7 +25,6 @@ const Project = ({
 				<Image
 					src={projectMetadata?.images[ 0 ]?.image?.node?.sourceUrl}
 					alt={projectMetadata?.images[ 0 ]?.image?.node?.altText}
-					className=""
 					width={600}
 					height={338}
 					priority={true}
