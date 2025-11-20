@@ -40,18 +40,8 @@ export default async function Project ({ params }) {
 	return (
 		<article className={`project-${id} py-10`}>
 			<ContainerNarrow>
-				<section className="flex flex-col mb-8">
-					<div className="flex items-center justify-between">
-						<h1 className="mb-0">{title}</h1>
-						{liveUrl && (
-							<a className="flex items-center gap-2 text-secondary px-3 py-1 border border-neutral hover:border-secondary rounded hover:text-primary"
-							   href={liveUrl}
-							   target="_blank" rel="noopener">
-								<span>Visit Live Site</span>
-								<FontAwesomeIcon className="shrink-0 size-3" icon={faExternalLink}/>
-							</a>
-						)}
-					</div>
+				<section className="flex flex-col gap-4">
+					<h1 className="mb-0">{title}</h1>
 					{content && (
 						<EditorContent>{content}</EditorContent>
 					)}
@@ -70,10 +60,20 @@ export default async function Project ({ params }) {
 							<p>{techStack}</p>
 						</div>
 					)}
-					<Link className="flex items-center gap-2 hover:underline" href="/projects">
-						<FontAwesomeIcon className="shrink-0 size-4" icon={faChevronCircleLeft}/>
-						<span>Back to Projects</span>
-					</Link>
+					<div className="flex justify-between items-center gap-4">
+						<Link className="flex items-center gap-2 hover:underline" href="/projects">
+							<FontAwesomeIcon className="shrink-0 size-4" icon={faChevronCircleLeft}/>
+							<span>Back to Projects</span>
+						</Link>
+						{liveUrl && (
+							<a className="flex items-center gap-2 text-secondary px-3 py-1 border border-secondary rounded hover:text-primary shrink-0 max-w-fit hover:bg-accent"
+							   href={liveUrl}
+							   target="_blank" rel="noopener">
+								<span>Visit Live Site</span>
+								<FontAwesomeIcon className="shrink-0 size-3" icon={faExternalLink}/>
+							</a>
+						)}
+					</div>
 				</section>
 			</ContainerNarrow>
 		</article>
