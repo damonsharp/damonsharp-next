@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata () {
 	return {
+		metadataBase: new URL("https://damonsharp.me"),
 		title: {
 			template: "%s | Damon Sharp - Web Engineer",
 			default: "Damon Sharp - Web Engineer"
