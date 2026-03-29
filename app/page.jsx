@@ -41,7 +41,7 @@ export default async function Home () {
 					<EditorContent>{content}</EditorContent>
 				</ContainerNarrow>
 				<ContainerNarrow>
-					<p>Want to learn more about my profession qualifications?</p>
+					<p>Want to learn more about my professional qualifications?</p>
 					<div className="flex gap-12 align-center">
 						<Button
 							asChild
